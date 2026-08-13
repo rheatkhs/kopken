@@ -91,9 +91,9 @@ export default function Hero() {
       {/* Hero Art Block (Background WebP Image with vertical stamp-tag) */}
       <figure className="absolute inset-0 z-1 w-full h-full m-0 p-0">
         <img
-          src="/assets/hero-city.webp"
-          alt="Futuristic Neo-Mirai City Landscape"
-          className="w-full h-full object-cover object-left-top mix-blend-multiply opacity-85 saturate-[1.02] contrast-[1.05]"
+          src="/assets/hero-kopi-kenangan.webp"
+          alt="Kopi Kenangan Specialty Coffee"
+          className="w-full h-full object-cover object-center mix-blend-multiply opacity-80 saturate-[1.05] contrast-[1.02]"
         />
 
         {/* Vertical Stamp box on the right of the Hero Art */}
