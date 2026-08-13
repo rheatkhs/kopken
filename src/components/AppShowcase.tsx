@@ -71,7 +71,7 @@ export default function AppShowcase() {
                     </span>
                   </div>
                   <div className="text-xl font-bold text-white tracking-tight mb-1">
-                    {points.toLocaleString()} <span className="text-[10px] text-[#dbd5cd]/50">PTS</span>
+                    {points.toLocaleString("id-ID")} <span className="text-[10px] text-[#dbd5cd]/50">PTS</span>
                   </div>
                   <div className="w-full bg-[#12131a] h-1 rounded-full overflow-hidden mb-2">
                     <div
