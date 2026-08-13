@@ -72,8 +72,18 @@ export default function BrandStory() {
         <div className="relative z-10 pt-6">
           <a href="#catalog" className="ticket-pill">
             <span>LEARN MORE ABOUT US</span>
-            <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
-              <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <svg
+              className="w-5 h-5 p-1 border border-current rounded-full"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M5 12h12m-5-5 5 5-5 5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </a>
         </div>
@@ -82,7 +92,7 @@ export default function BrandStory() {
       {/* Agenda/Story Right Art Image (7 columns on LG) */}
       <figure className="lg:col-span-7 relative m-0 p-0 min-h-[300px] lg:min-h-full bg-[#eae5de] overflow-hidden">
         <img
-          src="/assets/coffee-journey.webp"
+          src="/assets/coffee-journey.png"
           alt="Kopi Kenangan Coffee Journey"
           className="w-full h-full object-cover mix-blend-multiply filter saturate-[1.02] contrast-[1.05]"
         />
