@@ -1,15 +1,6 @@
 "use client";
 
-import { useState } from "react";
-import { Cpu } from "lucide-react";
-
 export default function Hero() {
-  // Interactive recipe simulator
-  const [sweetness, setSweetness] = useState(50);
-  const [ice, setIce] = useState(50);
-  const [milk, setMilk] = useState("Oat Milk");
-  const [showConsole, setShowConsole] = useState(false);
-
   return (
     <section
       id="hero"
@@ -61,8 +52,7 @@ export default function Hero() {
         </p>
 
         <p className="max-w-[20rem] text-[#4a453f] text-[clamp(0.85rem,1.1vw,1.1rem)] leading-[1.38] mt-[1.05rem] mb-[clamp(2rem,3.8vw,3.8rem)] font-sans">
-          Serving high quality coffee, made with the freshest local ingredients
-          to customers across Indonesia and the rest of the world.
+          Serving high quality coffee, made with the freshest local ingredients to customers across Indonesia and the rest of the world.
         </p>
 
         {/* Action Meta & CTA Buttons */}
@@ -73,18 +63,9 @@ export default function Hero() {
           </div>
 
           <div className="flex gap-3">
-            <button
-              onClick={() => setShowConsole(!showConsole)}
-              className="px-5 py-2.5 bg-[#1f1d1a] text-white hover:bg-[#c82a2b] transition-all rounded-full flex items-center gap-2 border border-[#1f1d1a]"
-            >
-              <Cpu className="w-3.5 h-3.5" />
-              <span>
-                {showConsole ? "CLOSE SIMULATOR" : "OPEN BREW SIMULATOR"}
-              </span>
-            </button>
             <a
               href="#catalog"
-              className="px-5 py-2.5 border border-[#1f1d1a]/20 hover:border-[#1f1d1a] transition-all rounded-full flex items-center"
+              className="px-5 py-2.5 bg-[#1f1d1a] text-white hover:bg-[#c82a2b] transition-all rounded-full flex items-center border border-[#1f1d1a] font-bold"
             >
               EXPLORE CATALOGUE →
             </a>
@@ -106,114 +87,9 @@ export default function Hero() {
           style={{ writingMode: "vertical-rl" }}
         >
           <span className="tracking-widest">WORLD BRAND WINNER 25-26</span>
-          <span className="text-[10px] text-[#c82a2b]">
-            CAFÉ CHAIN CATEGORY
-          </span>
+          <span className="text-[10px] text-[#c82a2b]">CAFÉ CHAIN CATEGORY</span>
         </div>
       </figure>
-
-      {/* Interactive Brew Console Panel Overlay */}
-      {showConsole && (
-        <div className="absolute top-[20%] right-[10%] z-20 w-full max-w-[380px] bg-[#f4f0eb]/95 border border-[#c8c0b5] rounded-2xl p-6 shadow-2xl backdrop-blur-md font-mono text-xs text-[#1f1d1a]">
-          <div className="flex justify-between items-center pb-3 mb-4 border-b border-[#c8c0b5]">
-            <div className="flex items-center gap-2">
-              <Cpu className="w-4 h-4 text-[#c82a2b] animate-pulse" />
-              <span className="font-bold tracking-wider">
-                BREW CONSOLE v1.0
-              </span>
-            </div>
-            <button
-              onClick={() => setShowConsole(false)}
-              className="text-[#4a453f] hover:text-[#1f1d1a] border border-[#c8c0b5] px-2 py-0.5 rounded"
-            >
-              [X]
-            </button>
-          </div>
-
-          <div className="space-y-4">
-            <div>
-              <div className="flex justify-between mb-1.5">
-                <span>MILK SELECTOR</span>
-                <span className="font-bold text-[#c82a2b]">{milk}</span>
-              </div>
-              <div className="grid grid-cols-3 gap-2">
-                {["Oat Milk", "Fresh Milk", "Soy Milk"].map((m) => (
-                  <button
-                    key={m}
-                    onClick={() => setMilk(m)}
-                    className={`py-1.5 px-1 text-[10px] rounded border transition-all ${
-                      milk === m
-                        ? "bg-[#c82a2b]/10 border-[#c82a2b] text-[#c82a2b] font-bold"
-                        : "bg-[#eae5de] border-[#c8c0b5] hover:border-neutral-500"
-                    }`}
-                  >
-                    {m}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-            <div>
-              <div className="flex justify-between mb-1">
-                <span>SWEETNESS</span>
-                <span className="font-bold">{sweetness}%</span>
-              </div>
-              <input
-                type="range"
-                min="0"
-                max="100"
-                step="25"
-                value={sweetness}
-                onChange={(e) => setSweetness(Number(e.target.value))}
-                className="w-full h-1 bg-[#eae5de] rounded-lg appearance-none cursor-pointer accent-[#c82a2b]"
-              />
-            </div>
-
-            <div>
-              <div className="flex justify-between mb-1">
-                <span>ICE LEVEL</span>
-                <span className="font-bold">{ice}%</span>
-              </div>
-              <input
-                type="range"
-                min="0"
-                max="100"
-                step="50"
-                value={ice}
-                onChange={(e) => setIce(Number(e.target.value))}
-                className="w-full h-1 bg-[#eae5de] rounded-lg appearance-none cursor-pointer accent-[#c82a2b]"
-              />
-            </div>
-
-            <div className="bg-[#eae5de] p-3 rounded-lg border border-[#c8c0b5] space-y-1 text-[11px] text-[#4a453f]">
-              <div className="flex justify-between">
-                <span>Richness Index:</span>
-                <span className="text-[#1f1d1a] font-bold">
-                  {milk === "Oat Milk" ? "High (Creamy)" : "Medium (Smooth)"}
-                </span>
-              </div>
-              <div className="flex justify-between">
-                <span>Est. Calories:</span>
-                <span className="text-[#1f1d1a] font-bold">
-                  {130 + sweetness * 1.2} kcal
-                </span>
-              </div>
-            </div>
-
-            <button
-              onClick={() => {
-                alert(
-                  `Resep terkirim!\nSusu: ${milk}\nKemanisan: ${sweetness}%\nEs: ${ice}%\nSedang menyeduh di mesin kopi IoT terdekat.`,
-                );
-                setShowConsole(false);
-              }}
-              className="w-full py-2.5 bg-[#c82a2b] hover:bg-[#a51d1e] text-white font-bold rounded tracking-widest transition-all"
-            >
-              SIMULATE BREW
-            </button>
-          </div>
-        </div>
-      )}
     </section>
   );
 }
