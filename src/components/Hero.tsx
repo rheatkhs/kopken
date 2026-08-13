@@ -6,8 +6,8 @@ export default function Hero() {
   return (
     <section
       id="hero"
-      className="relative block overflow-hidden border-b border-[#c8c0b5] pt-[74px]"
-      style={{ height: "clamp(32.5rem, 60.3vw, 54.4rem)" }}
+      className="relative block overflow-hidden border-b border-[#c8c0b5] pt-[74px] pb-16 lg:pb-0 flex flex-col justify-center"
+      style={{ minHeight: "clamp(32.5rem, 60.3vw, 54.4rem)" }}
     >
       {/* Background Fade Gradient Overlay */}
       <div
@@ -48,7 +48,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Hero Copy Content with stagger layout */}
-      <div className="relative z-10 w-full max-w-[min(50rem,calc(100%-2rem))] pt-[clamp(2.6rem,4.6vw,4.2rem)] pl-[clamp(2rem,9vw,8rem)] pr-4">
+      <div className="relative z-10 w-full max-w-[min(50rem,calc(100%-2rem))] pt-[clamp(1.5rem,4.6vw,4.2rem)] pl-[clamp(1rem,9vw,8rem)] pr-4">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -60,7 +60,7 @@ export default function Hero() {
         >
           <h1
             id="hero-title"
-            className="font-display font-light text-[clamp(2.8rem,6.8vw,5.5rem)] leading-[0.96] uppercase text-[#1f1d1a] tracking-tight"
+            className="font-display font-light text-[clamp(2.4rem,6.8vw,5.5rem)] leading-[0.96] uppercase text-[#1f1d1a] tracking-tight"
           >
             <motion.span
               variants={{
@@ -87,7 +87,7 @@ export default function Hero() {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
             }}
-            className="font-serif text-[clamp(1.5rem,3.1vw,2.8rem)] leading-none text-[#a51d1e] mt-[0.9rem] font-bold"
+            className="font-serif text-[clamp(1.2rem,3.1vw,2.8rem)] leading-none text-[#a51d1e] mt-[0.9rem] font-bold"
           >
             Brand of The Year
           </motion.p>
@@ -97,7 +97,7 @@ export default function Hero() {
               hidden: { opacity: 0, y: 20 },
               visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
             }}
-            className="max-w-[20rem] text-[#4a453f] text-[clamp(0.85rem,1.1vw,1.1rem)] leading-[1.38] mt-[1.05rem] mb-[clamp(2rem,3.8vw,3.8rem)] font-sans"
+            className="max-w-[20rem] text-[#4a453f] text-[clamp(0.85rem,1.1vw,1.1rem)] leading-[1.38] mt-[1.05rem] mb-[clamp(1.5rem,3.8vw,3.8rem)] font-sans"
           >
             Serving high quality coffee, made with the freshest local ingredients to customers across Indonesia and the rest of the world.
           </motion.p>
@@ -138,12 +138,12 @@ export default function Hero() {
           className="w-full h-full object-cover object-center mix-blend-multiply saturate-[1.05] contrast-[1.02]"
         />
 
-        {/* Vertical Stamp box on the right of the Hero Art */}
+        {/* Vertical Stamp box on the right of the Hero Art - Hidden on Mobile */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute right-[clamp(1.3rem,3.2vw,3rem)] top-[clamp(4.9rem,8vw,7rem)] z-10 w-[clamp(3.5rem,5.6vw,5.4rem)] h-[clamp(7.2rem,12vw,11.5rem)] border border-[#1f1d1a]/30 bg-[#eae5de]/90 flex flex-col justify-between items-center py-6 px-1.5 shadow-md shadow-neutral-900/10 text-[#1f1d1a] font-mono text-[clamp(0.58rem,0.9vw,0.76rem)] leading-tight text-center"
+          className="absolute right-[clamp(1.3rem,3.2vw,3rem)] top-[clamp(4.9rem,8vw,7rem)] z-10 w-[clamp(3.5rem,5.6vw,5.4rem)] h-[clamp(7.2rem,12vw,11.5rem)] border border-[#1f1d1a]/30 bg-[#eae5de]/90 hidden md:flex flex-col justify-between items-center py-6 px-1.5 shadow-md shadow-neutral-900/10 text-[#1f1d1a] font-mono text-[clamp(0.58rem,0.9vw,0.76rem)] leading-tight text-center"
           style={{ writingMode: "vertical-rl" }}
         >
           <span className="tracking-widest">WORLD BRAND WINNER 25-26</span>

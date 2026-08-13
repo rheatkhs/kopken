@@ -22,8 +22,7 @@ export default function Installations() {
   return (
     <section
       id="installations"
-      className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#c8c0b5] overflow-hidden bg-[#f4f0eb] px-4 sm:px-8 py-16"
-      style={{ minHeight: "clamp(15.3rem, 28.7vw, 25.5rem)" }}
+      className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#c8c0b5] overflow-hidden bg-[#f4f0eb] px-4 sm:px-8 py-16 lg:min-h-[clamp(15.3rem,28.7vw,25.5rem)]"
     >
       {/* Intro Sidebar (4 columns on LG) */}
       <div className="lg:col-span-4 flex flex-col justify-between pr-4 pb-8 lg:pb-0">

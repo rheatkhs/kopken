@@ -91,8 +91,7 @@ export default function Speakers() {
   return (
     <section
       id="speakers"
-      className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#c8c0b5] overflow-hidden bg-[#eae5de]"
-      style={{ height: "clamp(17.9rem, 33.4vw, 30rem)" }}
+      className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#c8c0b5] overflow-hidden bg-[#eae5de] lg:h-[clamp(17.9rem,33.4vw,30rem)]"
     >
       {/* Carousel Track (9 columns on LG) */}
       <div className="lg:col-span-9 relative h-full overflow-hidden group">

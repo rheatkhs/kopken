@@ -4,8 +4,7 @@ export default function Manifesto() {
   return (
     <section
       id="manifesto"
-      className="grid grid-cols-1 md:grid-cols-2 border-b border-[#c8c0b5] overflow-hidden"
-      style={{ minHeight: "clamp(11.6rem, 21.4vw, 18rem)" }}
+      className="grid grid-cols-1 md:grid-cols-2 border-b border-[#c8c0b5] overflow-hidden md:min-h-[clamp(11.6rem,21.4vw,18rem)]"
     >
       {/* Manifesto Left Panel */}
       <div className="bg-[#b38b4d] text-[#fcfbfa] p-[clamp(2.35rem,4.55vw,4.1rem)] flex flex-col justify-between relative overflow-hidden">

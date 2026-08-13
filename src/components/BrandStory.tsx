@@ -25,8 +25,7 @@ export default function BrandStory() {
   return (
     <section
       id="story"
-      className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#c8c0b5] overflow-hidden"
-      style={{ minHeight: "clamp(23.1rem, 43vw, 38.7rem)" }}
+      className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#c8c0b5] overflow-hidden lg:h-[clamp(23.1rem,43vw,38.7rem)]"
     >
       {/* Agenda/Story Left Dark Panel (5 columns on LG) */}
       <div className="lg:col-span-5 bg-[#12131a] text-[#fcfbfa] p-[clamp(1.5rem,2.5vw,2.5rem)] relative overflow-hidden flex flex-col justify-between">
