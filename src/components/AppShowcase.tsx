@@ -21,7 +21,7 @@ export default function AppShowcase() {
     LEGEND: {
       multiplier: "2.0x Points",
       discount: "15% Everyday Discount + Priority Queue",
-      voucher: "Unlimited Free Customization + Gift Box",
+      voucher: "Unlimited Free Customization + Birthday Drink",
     },
   };
 
@@ -34,14 +34,14 @@ export default function AppShowcase() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#c8c0b5]">
           <div>
             <div className="text-[#c82a2b] font-mono text-[11px] font-bold tracking-widest uppercase mb-2">
-              04 // LOYALTY & MOBILE ECOSYSTEM
+              04 // KOPI KENANGAN APP
             </div>
             <h2 className="text-3xl sm:text-5xl font-light font-display uppercase tracking-tight text-[#1f1d1a]">
-              APLIKASI & <span className="text-[#c82a2b]">LOYALTI</span>
+              APLIKASI & <span className="text-[#c82a2b]">KENANGAN POINTS</span>
             </h2>
           </div>
-          <p className="text-[#4a453f] font-sans text-xs max-w-sm mt-4 md:mt-0 leading-relaxed">
-            Dapatkan poin berlipat, pesan tanpa antre, dan nikmati penawaran eksklusif masa depan.
+          <p className="text-[#4a453f] font-sans text-xs max-w-sm mt-4 md:mt-0 leading-relaxed font-bold">
+            Extra convenience. Extra benefits. Only in Kenangan app.
           </p>
         </div>
 
@@ -58,7 +58,7 @@ export default function AppShowcase() {
               {/* Phone Content Screen */}
               <div className="bg-[#12131a] rounded-[32px] px-4 py-8 border border-white/5 font-mono text-[11px] text-[#dbd5cd]">
                 <div className="flex justify-between items-center text-[9px] text-[#80766b] mb-4 pt-1 border-b border-white/5 pb-2">
-                  <span>KENANGAN APP v4.2</span>
+                  <span>KENANGAN APP</span>
                   <span>100% SIGNAL</span>
                 </div>
 
@@ -126,10 +126,10 @@ export default function AppShowcase() {
           <div className="lg:col-span-7 space-y-8">
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold font-sans tracking-tight text-[#1f1d1a] mb-4 uppercase">
-                TIER LOYALITAS <span className="text-[#c82a2b]">NEO-MIRAI</span>
+                TIER LOYALITAS <span className="text-[#c82a2b]">KENANGAN APP</span>
               </h3>
               <p className="text-[#4a453f] font-sans text-xs sm:text-sm leading-relaxed mb-6">
-                Klik tingkatan loyalitas di bawah untuk melihat rincian manfaat eksklusif yang dirancang khusus untuk anggota Kopi Kenangan.
+                Gunakan aplikasi Kopi Kenangan untuk memesan dengan fitur Pickup atau Delivery tanpa perlu mengantre. Kumpulkan Kenangan Points cashback di setiap transaksi.
               </p>
             </div>
 
@@ -182,18 +182,15 @@ export default function AppShowcase() {
             {/* App Badges */}
             <div className="flex flex-wrap gap-4 items-center font-mono text-xs text-[#80766b]">
               <span>DOWNLOAD NOW:</span>
-              <button
-                onClick={() => alert("Mengunduh Kopi Kenangan App...")}
-                className="px-4 py-2 bg-[#eae5de] border border-[#c8c0b5] hover:border-neutral-500 text-[#1f1d1a] rounded transition-all"
+              <a
+                href="https://kopikenangan.onelink.me/4u50/tabak"
+                target="_blank"
+                rel="noreferrer"
+                className="px-4 py-2 bg-[#eae5de] border border-[#c8c0b5] hover:border-neutral-500 text-[#1f1d1a] rounded transition-all flex items-center gap-2 font-bold"
               >
-                APP STORE
-              </button>
-              <button
-                onClick={() => alert("Mengunduh Kopi Kenangan App...")}
-                className="px-4 py-2 bg-[#eae5de] border border-[#c8c0b5] hover:border-neutral-500 text-[#1f1d1a] rounded transition-all"
-              >
-                GOOGLE PLAY
-              </button>
+                <Smartphone className="w-3.5 h-3.5 text-[#c82a2b]" />
+                KENANGAN APP (APP STORE & GOOGLE PLAY)
+              </a>
             </div>
           </div>
         </div>

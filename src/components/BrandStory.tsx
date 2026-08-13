@@ -5,20 +5,20 @@ export default function BrandStory() {
     {
       phase: "Phase 01",
       date: "2017.08",
-      title: "Warisan Nusantara",
-      desc: "Menghubungkan kopi specialty lokal (Gayo, Mandheling, Toraja) langsung dari petani lokal.",
+      title: "First Kopi Susu Kekinian",
+      desc: "Kopi Kenangan berdiri membawa mimpi menyajikan kopi berkualitas tinggi berlandaskan bahan lokal terbaik.",
     },
     {
       phase: "Phase 02",
-      date: "2021.05",
-      title: "IoT Extraction & Scaling",
-      desc: "Digitalisasi jaringan kedai dengan presisi suhu dan rasio ekstraksi terkontrol otomatis.",
+      date: "2020.10",
+      title: "MUI Halal Certification",
+      desc: "Menjadi rantai kopi grab-and-go Kopi Susu Kekinian pertama yang memperoleh Sertifikasi Halal dari Majelis Ulama Indonesia.",
     },
     {
       phase: "Phase 03",
-      date: "2026.08",
-      title: "Neo-Mirai Sustainable Era",
-      desc: "Transisi ke eco-cup serat jagung biodegradable dan program kemitraan petani 100% fair trade.",
+      date: "2025.11",
+      title: "World Branding Awards Winner",
+      desc: "Dinobatkan sebagai pemenang Brand of The Year kategori Café Chain dari Indonesia di ajang World Branding Awards.",
     },
   ];
 
@@ -41,10 +41,10 @@ export default function BrandStory() {
         <div className="relative z-10 space-y-6">
           <div>
             <p className="font-display text-[clamp(1.8rem,3vw,2.6rem)] font-light leading-none uppercase text-[#fcfbfa] mb-2">
-              BRAND STORY
+              COFFEE JOURNEY
             </p>
             <h2 className="text-[1.1rem] font-serif text-[#cfa869] font-normal leading-snug">
-              Perjalanan dari Kedai Lokal Menuju Era Presisi Modern
+              Delivering on Our Promise: Harvest, Tasting, Roasting & Local Producers
             </h2>
           </div>
 
@@ -73,7 +73,7 @@ export default function BrandStory() {
         {/* Action Link */}
         <div className="relative z-10 pt-6">
           <a href="#catalog" className="text-action text-[#cfa869] hover:text-white">
-            <span>DISCOVER FULL PHILOSOPHY</span>
+            <span>LEARN MORE ABOUT US</span>
             <span className="text-action-icon">
               <span className="text-action-arrow">→</span>
             </span>
@@ -85,14 +85,14 @@ export default function BrandStory() {
       <figure className="lg:col-span-7 relative m-0 p-0 min-h-[300px] lg:min-h-full bg-[#eae5de] overflow-hidden">
         <img
           src="/assets/agenda-architecture.webp"
-          alt="Neo-Mirai Architecture"
+          alt="Coffee Architecture"
           className="w-full h-full object-cover mix-blend-multiply filter saturate-[1.02] contrast-[1.05]"
         />
         <figcaption
-          className="absolute left-8 top-12 text-[#4a453f] font-serif text-[clamp(1rem,1.7vw,1.25rem)]"
+          className="absolute left-8 top-12 text-[#4a453f] font-serif text-[clamp(0.9rem,1.4vw,1.1rem)] max-w-[280px]"
           style={{ writingMode: "vertical-rl" }}
         >
-          創造は、未来をつくる最初の一歩。
+          QUALITY COFFEE MADE WITH FRESH LOCAL INGREDIENTS.
         </figcaption>
       </figure>
     </section>

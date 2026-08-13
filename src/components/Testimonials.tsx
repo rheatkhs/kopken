@@ -8,7 +8,7 @@ export default function Testimonials() {
       id: 1,
       name: "Aditya Pratama",
       role: "Software Architect // Jakarta",
-      comment: "Aplikasi Kopi Kenangan Neo-Mirai beneran kerasa canggihnya. Pesen lewat aplikasi, dapet diskon kustom, lalu kopi diseduh presisi dan diambil langsung tanpa antre. Cita rasanya konsisten!",
+      comment: "Aplikasi Kopi Kenangan beneran kerasa canggihnya. Pesen lewat aplikasi, dapet diskon kustom, lalu kopi diseduh presisi dan diambil langsung tanpa antre. Cita rasanya konsisten!",
       rating: 5,
       avatar: "AP",
       date: "12.08.2026",

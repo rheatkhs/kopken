@@ -29,7 +29,7 @@
     font-family: var(--font-serif);
     line-height: 1.55;
     overflow-x: hidden;
-    /* Neo-Mirai grid background */
+    /* Kopi Kenangan grid background */
     background-image:
       radial-gradient(circle at 66% 7%, rgba(200, 42, 43, 0.15), transparent 24rem),
       linear-gradient(90deg, rgba(31, 29, 26, 0.04) 1px, transparent 1px),
@@ -38,7 +38,7 @@
   }
 }
 
-/* Custom layout utilities to match exact Neo-Mirai aesthetics */
+/* Custom layout utilities */
 .brand-mark {
   position: relative;
   width: 2.18rem;

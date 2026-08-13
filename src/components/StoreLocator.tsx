@@ -12,7 +12,7 @@ export default function StoreLocator() {
   const stores = [
     {
       id: 1,
-      name: "KENANGAN NEO-MIRAI FLAGSHIP - SENOPATI",
+      name: "KENANGAN FLAGSHIP STORE - SENOPATI",
       city: "JAKARTA",
       address: "Jl. Senopati No. 88, Kebayoran Baru, Jakarta Selatan",
       hours: "07:00 - 23:00 WIB",
@@ -72,7 +72,7 @@ export default function StoreLocator() {
     },
     {
       id: 6,
-      name: "KENANGAN NEO HUB - CENTRAL PARK",
+      name: "KENANGAN HUB - CENTRAL PARK",
       city: "JAKARTA",
       address: "Ground Floor, Central Park Mall, Jakarta Barat",
       hours: "10:00 - 22:00 WIB",
@@ -106,7 +106,7 @@ export default function StoreLocator() {
             </h2>
           </div>
           <p className="text-[#4a453f] font-sans text-xs max-w-sm mt-4 md:mt-0 leading-relaxed">
-            Temukan lokasi gerai Kopi Kenangan Neo-Mirai dengan indikator estimasi waktu tunggu real-time.
+            Temukan lokasi gerai Kopi Kenangan dengan indikator estimasi waktu tunggu real-time.
           </p>
         </div>
 

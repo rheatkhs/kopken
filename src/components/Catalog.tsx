@@ -57,8 +57,8 @@ export default function Catalog() {
     },
     {
       id: 5,
-      name: "MATCHA LATTE NEO-MIRAI",
-      japanese: "ネオ抹茶ラテ",
+      name: "MATCHA LATTE PREMIUM",
+      japanese: "抹茶ラテ",
       category: "NON-COFFEE",
       desc: "Matcha asli Uji Kyoto dipadukan dengan pemanis alami tebu pilihan dan susu murni segar berstandar tinggi.",
       price: { Regular: 22000, Large: 26000 },

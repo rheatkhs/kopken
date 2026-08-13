@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "KOPI KENANGAN // NEO-MIRAI — The Future of Indonesian Coffee",
-  description: "Sensasi kopi lokal dengan sentuhan masa depan. Modernizing Indonesian coffee culture through state-of-the-art brewing technology, loyalty ecosystem, and premium bean selection.",
+  title: "KOPI KENANGAN — Coffee Memories // High Quality Local Coffee",
+  description: "At Kopi Kenangan, our dream is to serve high quality coffee, made with the freshest local ingredients to customers across Indonesia and the rest of the world.",
 };
 
 export default function RootLayout({

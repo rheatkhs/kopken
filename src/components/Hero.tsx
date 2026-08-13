@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Cpu, Play } from "lucide-react";
+import { Cpu } from "lucide-react";
 
 export default function Hero() {
   // Interactive recipe simulator
@@ -16,7 +16,7 @@ export default function Hero() {
       className="relative block overflow-hidden border-b border-[#c8c0b5] pt-[74px]"
       style={{ height: "clamp(32.5rem, 60.3vw, 54.4rem)" }}
     >
-      {/* Background Fade Gradient Overlay matching Neo-Mirai ::after */}
+      {/* Background Fade Gradient Overlay */}
       <div
         className="absolute inset-0 z-2 pointer-events-none"
         style={{
@@ -33,8 +33,8 @@ export default function Hero() {
 
       {/* Vertical Poem Block */}
       <div className="vertical-poem absolute left-[clamp(1rem,3.2vw,2.8rem)] top-[35%] z-10 hidden sm:flex">
-        <span className="font-serif text-[clamp(0.9rem,1.4vw,1.15rem)] text-[#4a453f] font-bold">
-          未来を描き、共に創る。
+        <span className="font-serif text-[clamp(0.9rem,1.4vw,1.15rem)] text-[#4a453f] font-bold tracking-widest uppercase">
+          COFFEE MEMORIES
         </span>
         <i className="w-[1px] h-[clamp(5rem,11vw,9rem)] bg-[#c8c0b5]"></i>
         <img
@@ -50,24 +50,26 @@ export default function Hero() {
           id="hero-title"
           className="font-display font-light text-[clamp(2.8rem,6.8vw,5.5rem)] leading-[0.96] uppercase text-[#1f1d1a] tracking-tight"
         >
-          <span className="block">KOPI KENANGAN</span>
-          <span className="block text-[#c82a2b] font-normal">NEO-MIRAI</span>
-          <span className="block">EDITION</span>
+          <span className="block text-[#c82a2b] font-normal">
+            KOPI KENANGAN
+          </span>
+          <span className="block">STANDS FOR YOU</span>
         </h1>
 
         <p className="font-serif text-[clamp(1.5rem,3.1vw,2.8rem)] leading-none text-[#a51d1e] mt-[0.9rem] font-bold">
-          Jakarta 2026
+          Brand of The Year
         </p>
 
         <p className="max-w-[20rem] text-[#4a453f] text-[clamp(0.85rem,1.1vw,1.1rem)] leading-[1.38] mt-[1.05rem] mb-[clamp(2rem,3.8vw,3.8rem)] font-sans">
-          Menggabungkan seni baristisme tradisional Indonesia dengan akurasi penyeduhan IoT masa depan.
+          Serving high quality coffee, made with the freshest local ingredients
+          to customers across Indonesia and the rest of the world.
         </p>
 
         {/* Action Meta & CTA Buttons */}
         <div className="flex flex-wrap items-center gap-6 font-mono text-[11px] uppercase tracking-wider text-[#1f1d1a]">
           <div className="flex flex-col gap-1.5">
             <span>SEJAK // EST. 2017</span>
-            <span>BEANS // 100% INDONESIAN SPECIALTY</span>
+            <span>BEANS // 100% INDONESIAN FRESH LOCAL INGREDIENTS</span>
           </div>
 
           <div className="flex gap-3">
@@ -76,7 +78,9 @@ export default function Hero() {
               className="px-5 py-2.5 bg-[#1f1d1a] text-white hover:bg-[#c82a2b] transition-all rounded-full flex items-center gap-2 border border-[#1f1d1a]"
             >
               <Cpu className="w-3.5 h-3.5" />
-              <span>{showConsole ? "CLOSE SIMULATOR" : "OPEN BREW SIMULATOR"}</span>
+              <span>
+                {showConsole ? "CLOSE SIMULATOR" : "OPEN BREW SIMULATOR"}
+              </span>
             </button>
             <a
               href="#catalog"
@@ -101,8 +105,10 @@ export default function Hero() {
           className="absolute right-[clamp(1.3rem,3.2vw,3rem)] top-[clamp(4.9rem,8vw,7rem)] z-10 w-[clamp(3.5rem,5.6vw,5.4rem)] h-[clamp(7.2rem,12vw,11.5rem)] border border-[#1f1d1a]/30 bg-[#eae5de]/90 flex flex-col justify-between items-center py-6 px-1.5 shadow-md shadow-neutral-900/10 text-[#1f1d1a] font-mono text-[clamp(0.58rem,0.9vw,0.76rem)] leading-tight text-center"
           style={{ writingMode: "vertical-rl" }}
         >
-          <span className="tracking-widest">新しい未来の珈琲体験</span>
-          <span className="text-[10px] text-[#c82a2b]">BREWING REVOLUTION</span>
+          <span className="tracking-widest">WORLD BRAND WINNER 25-26</span>
+          <span className="text-[10px] text-[#c82a2b]">
+            CAFÉ CHAIN CATEGORY
+          </span>
         </div>
       </figure>
 
@@ -112,7 +118,9 @@ export default function Hero() {
           <div className="flex justify-between items-center pb-3 mb-4 border-b border-[#c8c0b5]">
             <div className="flex items-center gap-2">
               <Cpu className="w-4 h-4 text-[#c82a2b] animate-pulse" />
-              <span className="font-bold tracking-wider">BREW CONSOLE v1.0</span>
+              <span className="font-bold tracking-wider">
+                BREW CONSOLE v1.0
+              </span>
             </div>
             <button
               onClick={() => setShowConsole(false)}
@@ -186,13 +194,17 @@ export default function Hero() {
               </div>
               <div className="flex justify-between">
                 <span>Est. Calories:</span>
-                <span className="text-[#1f1d1a] font-bold">{130 + sweetness * 1.2} kcal</span>
+                <span className="text-[#1f1d1a] font-bold">
+                  {130 + sweetness * 1.2} kcal
+                </span>
               </div>
             </div>
 
             <button
               onClick={() => {
-                alert(`Resep terkirim!\nSusu: ${milk}\nKemanisan: ${sweetness}%\nEs: ${ice}%\nSedang menyeduh di mesin kopi IoT terdekat.`);
+                alert(
+                  `Resep terkirim!\nSusu: ${milk}\nKemanisan: ${sweetness}%\nEs: ${ice}%\nSedang menyeduh di mesin kopi IoT terdekat.`,
+                );
                 setShowConsole(false);
               }}
               className="w-full py-2.5 bg-[#c82a2b] hover:bg-[#a51d1e] text-white font-bold rounded tracking-widest transition-all"

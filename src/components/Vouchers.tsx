@@ -68,7 +68,7 @@ export default function Vouchers() {
       <div className="md:col-span-3 relative z-10 flex justify-center">
         <div className="w-36 h-36 rounded-full bg-gradient-to-br from-[#c82a2b] to-[#a51d1e] text-white flex flex-col items-center justify-center p-4 text-center font-mono text-[11px] uppercase font-bold tracking-widest border-2 border-[#cfa869] shadow-lg">
           <span>GET YOUR</span>
-          <span>NEO PASS</span>
+          <span>KENANGAN PASS</span>
           <a
             href="#app"
             className="mt-2 w-8 h-8 rounded-full border border-white flex items-center justify-center hover:bg-white hover:text-[#c82a2b] transition-colors"
