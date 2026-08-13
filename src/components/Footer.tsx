@@ -5,9 +5,11 @@ export default function Footer() {
     <footer className="bg-[#f4f0eb] border-t border-[#c8c0b5] px-4 sm:px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6 font-mono text-[11px] text-[#4a453f]">
       {/* Brand Lockup */}
       <a href="#" className="inline-flex items-center gap-2">
-        <div className="brand-mark">
-          <span></span>
-        </div>
+        <img
+          src="/favicon.ico"
+          alt="Kopi Kenangan Logo"
+          className="w-9 h-9 rounded-full border border-[#c8c0b5]"
+        />
         <div className="grid gap-0.5 font-mono text-[10px] leading-none tracking-wider text-[#1f1d1a] font-bold uppercase">
           <span>KOPI</span>
           <span>KENANGAN</span>

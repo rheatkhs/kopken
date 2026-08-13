@@ -26,9 +26,11 @@ export default function Header() {
     >
       {/* Brand Lockup */}
       <a href="#" className="inline-flex items-center gap-2.5 group">
-        <div className="brand-mark group-hover:scale-105 transition-transform">
-          <span></span>
-        </div>
+        <img
+          src="/favicon.ico"
+          alt="Kopi Kenangan Logo"
+          className="w-9 h-9 rounded-full border border-[#c8c0b5] group-hover:scale-105 transition-transform"
+        />
         <div className="grid gap-0.5 font-mono text-[12px] leading-none tracking-wider text-[#1f1d1a] font-bold uppercase">
           <span>KOPI</span>
           <span>KENANGAN</span>
