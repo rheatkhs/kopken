@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 export default function Hero() {
   return (
     <section
@@ -22,74 +24,131 @@ export default function Hero() {
         }}
       ></div>
 
-      {/* Vertical Poem Block */}
-      <div className="vertical-poem absolute left-[clamp(1rem,3.2vw,2.8rem)] top-[35%] z-10 hidden sm:flex">
+      {/* Vertical Poem Block with Motion */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        className="vertical-poem absolute left-[clamp(1rem,3.2vw,2.8rem)] top-[35%] z-10 hidden sm:flex"
+      >
         <span className="font-serif text-[clamp(0.9rem,1.4vw,1.15rem)] text-[#4a453f] font-bold tracking-widest uppercase">
           COFFEE MEMORIES
         </span>
-        <i className="w-[1px] h-[clamp(5rem,11vw,9rem)] bg-[#c8c0b5]"></i>
+        <motion.i
+          initial={{ scaleY: 0 }}
+          animate={{ scaleY: 1 }}
+          transition={{ duration: 1, delay: 0.6, ease: "easeInOut" }}
+          className="w-[1px] h-[clamp(5rem,11vw,9rem)] bg-[#c8c0b5] origin-top"
+        ></motion.i>
         <img
           src="/assets/stamp-seal.svg"
           alt="Stamp Seal"
           className="w-[clamp(1.45rem,2.1vw,1.95rem)] opacity-90"
         />
-      </div>
+      </motion.div>
 
-      {/* Hero Copy Content */}
+      {/* Hero Copy Content with stagger layout */}
       <div className="relative z-10 w-full max-w-[min(50rem,calc(100%-2rem))] pt-[clamp(2.6rem,4.6vw,4.2rem)] pl-[clamp(2rem,9vw,8rem)] pr-4">
-        <h1
-          id="hero-title"
-          className="font-display font-light text-[clamp(2.8rem,6.8vw,5.5rem)] leading-[0.96] uppercase text-[#1f1d1a] tracking-tight"
+        <motion.div
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: {},
+            visible: { transition: { staggerChildren: 0.15 } },
+          }}
+          className="space-y-4"
         >
-          <span className="block text-[#c82a2b] font-normal">
-            KOPI KENANGAN
-          </span>
-          <span className="block text-[0.55em] tracking-wider text-[#4a453f] font-normal mt-[1.5rem]">
-            STANDS FOR YOU
-          </span>
-        </h1>
+          <h1
+            id="hero-title"
+            className="font-display font-light text-[clamp(2.8rem,6.8vw,5.5rem)] leading-[0.96] uppercase text-[#1f1d1a] tracking-tight"
+          >
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+              }}
+              className="block text-[#c82a2b] font-normal"
+            >
+              KOPI KENANGAN
+            </motion.span>
+            <motion.span
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+              }}
+              className="block text-[0.55em] tracking-wider text-[#4a453f] font-normal mt-2"
+            >
+              STANDS FOR YOU
+            </motion.span>
+          </h1>
 
-        <p className="max-w-[20rem] text-[#4a453f] text-[clamp(0.85rem,1.1vw,1.1rem)] leading-[1.38] mt-[1.5rem] mb-[clamp(2rem,3.8vw,3.8rem)] font-sans">
-          Serving high quality coffee, made with the freshest local ingredients
-          to customers across Indonesia and the rest of the world.
-        </p>
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+            }}
+            className="font-serif text-[clamp(1.5rem,3.1vw,2.8rem)] leading-none text-[#a51d1e] mt-[0.9rem] font-bold"
+          >
+            Brand of The Year
+          </motion.p>
 
-        {/* Action Meta & CTA Buttons */}
-        <div className="flex flex-col items-start gap-6 font-mono text-[11px] uppercase tracking-wider text-[#1f1d1a]">
-          <div className="flex flex-col gap-1.5">
-            <span>EST. 2017</span>
-            <span>100% INDONESIAN FRESH LOCAL INGREDIENTS</span>
-          </div>
+          <motion.p
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+            }}
+            className="max-w-[20rem] text-[#4a453f] text-[clamp(0.85rem,1.1vw,1.1rem)] leading-[1.38] mt-[1.05rem] mb-[clamp(2rem,3.8vw,3.8rem)] font-sans"
+          >
+            Serving high quality coffee, made with the freshest local ingredients to customers across Indonesia and the rest of the world.
+          </motion.p>
 
-          <div>
-            <a href="#catalog" className="ticket-pill">
-              <span>EXPLORE CATALOGUE</span>
-              <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
-                <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-          </div>
-        </div>
+          {/* Action Meta & CTA Buttons */}
+          <motion.div
+            variants={{
+              hidden: { opacity: 0, y: 20 },
+              visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] } },
+            }}
+            className="flex flex-col items-start gap-6 font-mono text-[11px] uppercase tracking-wider text-[#1f1d1a]"
+          >
+            <div className="flex flex-col gap-1.5">
+              <span>EST. 2017</span>
+              <span>100% INDONESIAN FRESH LOCAL INGREDIENTS</span>
+            </div>
+
+            <div>
+              <a href="#catalog" className="ticket-pill">
+                <span>EXPLORE CATALOGUE</span>
+                <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
+                  <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
 
-      {/* Hero Art Block (Background WebP Image with vertical stamp-tag) */}
+      {/* Hero Art Block with Motion */}
       <figure className="absolute inset-0 z-1 w-full h-full m-0 p-0">
-        <img
+        <motion.img
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 0.8, scale: 1 }}
+          transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           src="/assets/hero-kopi-kenangan.png"
-          alt="Kopi Kenangan"
-          className="w-full h-full object-cover object-center mix-blend-multiply opacity-80 saturate-[1.05] contrast-[1.02]"
+          alt="Kopi Kenangan Specialty Coffee"
+          className="w-full h-full object-cover object-center mix-blend-multiply saturate-[1.05] contrast-[1.02]"
         />
 
         {/* Vertical Stamp box on the right of the Hero Art */}
-        <div
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
           className="absolute right-[clamp(1.3rem,3.2vw,3rem)] top-[clamp(4.9rem,8vw,7rem)] z-10 w-[clamp(3.5rem,5.6vw,5.4rem)] h-[clamp(7.2rem,12vw,11.5rem)] border border-[#1f1d1a]/30 bg-[#eae5de]/90 flex flex-col justify-between items-center py-6 px-1.5 shadow-md shadow-neutral-900/10 text-[#1f1d1a] font-mono text-[clamp(0.58rem,0.9vw,0.76rem)] leading-tight text-center"
           style={{ writingMode: "vertical-rl" }}
         >
           <span className="tracking-widest">WORLD BRAND WINNER 25-26</span>
-          <span className="text-[10px] text-[#c82a2b]">
-            CAFÉ CHAIN CATEGORY
-          </span>
-        </div>
+          <span className="text-[10px] text-[#c82a2b]">CAFÉ CHAIN CATEGORY</span>
+        </motion.div>
       </figure>
     </section>
   );

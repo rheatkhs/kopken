@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { Sparkles } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Catalog() {
   const [filter, setFilter] = useState("ALL");
@@ -121,8 +122,12 @@ export default function Catalog() {
             const price = p.price[size];
 
             return (
-              <div
+              <motion.div
                 key={p.id}
+                layout
+                initial={{ opacity: 0, y: 15 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 className="bg-[#eae5de]/60 border border-[#c8c0b5] hover:border-[#c82a2b]/70 hover:shadow-md transition-all duration-300 rounded-2xl p-6 flex flex-col justify-between group relative overflow-hidden"
               >
                 <div>
@@ -187,107 +192,120 @@ export default function Catalog() {
                     </button>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>
 
-        {/* Modal Info Detail */}
-        {selectedProduct && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
-            {/* Modal Body */}
-            {(() => {
-              const p = products.find((prod) => prod.id === selectedProduct)!;
-              return (
-                <div className="bg-[#f4f0eb] border border-[#c8c0b5] rounded-2xl max-w-lg w-full p-6 sm:p-8 relative overflow-hidden font-mono text-[#1f1d1a]">
-                  {/* Decorative Header */}
-                  <div className="flex justify-between items-center pb-4 mb-6 border-b border-[#c8c0b5]">
-                    <div className="flex items-center gap-2">
-                      <Sparkles className="w-4 h-4 text-[#b38b4d]" />
-                      <span className="text-xs font-bold uppercase tracking-widest text-[#1f1d1a]">
-                        SPECIFICATION PANEL
-                      </span>
+        {/* Modal Info Detail with Framer Motion AnimatePresence */}
+        <AnimatePresence>
+          {selectedProduct && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+            >
+              {/* Modal Body */}
+              {(() => {
+                const p = products.find((prod) => prod.id === selectedProduct)!;
+                return (
+                  <motion.div
+                    initial={{ scale: 0.95, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    exit={{ scale: 0.95, opacity: 0 }}
+                    transition={{ type: "spring", duration: 0.5 }}
+                    className="bg-[#f4f0eb] border border-[#c8c0b5] rounded-2xl max-w-lg w-full p-6 sm:p-8 relative overflow-hidden font-mono text-[#1f1d1a]"
+                  >
+                    {/* Decorative Header */}
+                    <div className="flex justify-between items-center pb-4 mb-6 border-b border-[#c8c0b5]">
+                      <div className="flex items-center gap-2">
+                        <Sparkles className="w-4 h-4 text-[#b38b4d]" />
+                        <span className="text-xs font-bold uppercase tracking-widest text-[#1f1d1a]">
+                          SPECIFICATION PANEL
+                        </span>
+                      </div>
+                      <button
+                        onClick={() => setSelectedProduct(null)}
+                        className="text-[#4a453f] hover:text-[#1f1d1a] text-xs bg-[#eae5de] border border-[#c8c0b5] px-3 py-1 rounded"
+                      >
+                        [CLOSE]
+                      </button>
                     </div>
-                    <button
-                      onClick={() => setSelectedProduct(null)}
-                      className="text-[#4a453f] hover:text-[#1f1d1a] text-xs bg-[#eae5de] border border-[#c8c0b5] px-3 py-1 rounded"
-                    >
-                      [CLOSE]
-                    </button>
-                  </div>
 
-                  <h3 className="text-xl font-bold font-sans text-[#1f1d1a] mb-1">{p.name}</h3>
-                  <p className="text-xs text-[#c82a2b] mb-6">{p.japanese} // {p.category}</p>
+                    <h3 className="text-xl font-bold font-sans text-[#1f1d1a] mb-1">{p.name}</h3>
+                    <p className="text-xs text-[#c82a2b] mb-6">{p.japanese} // {p.category}</p>
 
-                  {/* Flavor Metrics */}
-                  <div className="space-y-4 mb-6">
+                    {/* Flavor Metrics */}
+                    <div className="space-y-4 mb-6">
+                      <div>
+                        <div className="flex justify-between text-xs mb-1">
+                          <span className="text-[#4a453f]">SWEETNESS</span>
+                          <span className="text-[#1f1d1a]">{"★".repeat(p.notes.sweetness)}{"☆".repeat(5 - p.notes.sweetness)}</span>
+                        </div>
+                        <div className="w-full bg-[#eae5de] h-1.5 rounded-full overflow-hidden">
+                          <div className="bg-[#c82a2b] h-full" style={{ width: `${p.notes.sweetness * 20}%` }}></div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="flex justify-between text-xs mb-1">
+                          <span className="text-[#4a453f]">INTENSITY</span>
+                          <span className="text-[#1f1d1a]">{"★".repeat(p.notes.intensity)}{"☆".repeat(5 - p.notes.intensity)}</span>
+                        </div>
+                        <div className="w-full bg-[#eae5de] h-1.5 rounded-full overflow-hidden">
+                          <div className="bg-[#c82a2b] h-full" style={{ width: `${p.notes.intensity * 20}%` }}></div>
+                        </div>
+                      </div>
+
+                      <div>
+                        <div className="flex justify-between text-xs mb-1">
+                          <span className="text-[#4a453f]">ACIDITY</span>
+                          <span className="text-[#1f1d1a]">{"★".repeat(p.notes.acidity)}{"☆".repeat(5 - p.notes.acidity)}</span>
+                        </div>
+                        <div className="w-full bg-[#eae5de] h-1.5 rounded-full overflow-hidden">
+                          <div className="bg-[#c82a2b] h-full" style={{ width: `${p.notes.acidity * 20}%` }}></div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Extra Info Panel */}
+                    <div className="bg-[#eae5de] p-4 rounded-xl border border-[#c8c0b5] text-xs space-y-2 mb-6">
+                      <div className="flex justify-between">
+                        <span className="text-[#4a453f]">Caffeine Profile:</span>
+                        <span className="text-[#c82a2b] font-bold">{p.notes.caffeine}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-[#4a453f]">Optimal Temperature:</span>
+                        <span className="text-[#1f1d1a]">4.0°C (Chilled) / 65.0°C (Hot)</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="text-[#4a453f]">Roast Profile:</span>
+                        <span className="text-[#1f1d1a]">Medium-Dark Roast</span>
+                      </div>
+                    </div>
+
+                    {/* Modal CTA */}
                     <div>
-                      <div className="flex justify-between text-xs mb-1">
-                        <span className="text-[#4a453f]">SWEETNESS</span>
-                        <span className="text-[#1f1d1a]">{"★".repeat(p.notes.sweetness)}{"☆".repeat(5 - p.notes.sweetness)}</span>
-                      </div>
-                      <div className="w-full bg-[#eae5de] h-1.5 rounded-full overflow-hidden">
-                        <div className="bg-[#c82a2b] h-full" style={{ width: `${p.notes.sweetness * 20}%` }}></div>
-                      </div>
+                      <button
+                        onClick={() => {
+                          alert(`Pesanan ${p.name} simulasi ditambahkan! Unduh aplikasi Kopi Kenangan untuk memesan produk ini.`);
+                          setSelectedProduct(null);
+                        }}
+                        className="ticket-pill w-full justify-center"
+                      >
+                        <span>ORDER NOW</span>
+                        <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
+                          <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                        </svg>
+                      </button>
                     </div>
-
-                    <div>
-                      <div className="flex justify-between text-xs mb-1">
-                        <span className="text-[#4a453f]">INTENSITY</span>
-                        <span className="text-[#1f1d1a]">{"★".repeat(p.notes.intensity)}{"☆".repeat(5 - p.notes.intensity)}</span>
-                      </div>
-                      <div className="w-full bg-[#eae5de] h-1.5 rounded-full overflow-hidden">
-                        <div className="bg-[#c82a2b] h-full" style={{ width: `${p.notes.intensity * 20}%` }}></div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex justify-between text-xs mb-1">
-                        <span className="text-[#4a453f]">ACIDITY</span>
-                        <span className="text-[#1f1d1a]">{"★".repeat(p.notes.acidity)}{"☆".repeat(5 - p.notes.acidity)}</span>
-                      </div>
-                      <div className="w-full bg-[#eae5de] h-1.5 rounded-full overflow-hidden">
-                        <div className="bg-[#c82a2b] h-full" style={{ width: `${p.notes.acidity * 20}%` }}></div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Extra Info Panel */}
-                  <div className="bg-[#eae5de] p-4 rounded-xl border border-[#c8c0b5] text-xs space-y-2 mb-6">
-                    <div className="flex justify-between">
-                      <span className="text-[#4a453f]">Caffeine Profile:</span>
-                      <span className="text-[#c82a2b] font-bold">{p.notes.caffeine}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-[#4a453f]">Optimal Temperature:</span>
-                      <span className="text-[#1f1d1a]">4.0°C (Chilled) / 65.0°C (Hot)</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-[#4a453f]">Roast Profile:</span>
-                      <span className="text-[#1f1d1a]">Medium-Dark Roast</span>
-                    </div>
-                  </div>
-
-                  {/* Modal CTA */}
-                  <div>
-                    <button
-                      onClick={() => {
-                        alert(`Pesanan ${p.name} simulasi ditambahkan! Unduh aplikasi Kopi Kenangan untuk memesan produk ini.`);
-                        setSelectedProduct(null);
-                      }}
-                      className="ticket-pill w-full justify-center"
-                    >
-                      <span>ORDER NOW</span>
-                      <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
-                        <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
-                    </button>
-                  </div>
-                </div>
-              );
-            })()}
-          </div>
-        )}
+                  </motion.div>
+                );
+              })()}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </section>
   );
