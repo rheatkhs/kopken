@@ -29,13 +29,12 @@ export default function BrandStory() {
     >
       {/* Agenda/Story Left Dark Panel (5 columns on LG) */}
       <div className="lg:col-span-5 bg-[#12131a] text-[#fcfbfa] p-[clamp(1.5rem,2.5vw,2.5rem)] relative overflow-hidden flex flex-col justify-between">
-        {/* Decorative Golden Sun disk overlay */}
-        <div
-          className="absolute -right-32 top-0 z-0 w-80 h-80 rounded-full opacity-80 pointer-events-none mix-blend-multiply"
-          style={{
-            background: "linear-gradient(180deg, #cfa869, #c82a2b)",
-          }}
-        ></div>
+        {/* Decorative Coffee Journey Image Overlay */}
+        <img
+          src="/assets/coffee-journey-1.png"
+          alt="Coffee Journey Overlay"
+          className="absolute -right-20 top-0 z-0 w-72 h-72 opacity-25 pointer-events-none mix-blend-lighten object-contain"
+        />
 
         <div className="relative z-10 space-y-6">
           <div>
@@ -43,7 +42,8 @@ export default function BrandStory() {
               COFFEE JOURNEY
             </p>
             <h2 className="text-[1.1rem] font-serif text-[#cfa869] font-normal leading-snug">
-              Delivering on Our Promise: Harvest, Tasting, Roasting & Local Producers
+              Delivering on Our Promise: Harvest, Tasting, Roasting & Local
+              Producers
             </h2>
           </div>
 
@@ -73,8 +73,18 @@ export default function BrandStory() {
         <div className="relative z-10 pt-6">
           <a href="#catalog" className="ticket-pill">
             <span>LEARN MORE ABOUT US</span>
-            <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
-              <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <svg
+              className="w-5 h-5 p-1 border border-current rounded-full"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M5 12h12m-5-5 5 5-5 5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
             </svg>
           </a>
         </div>
@@ -83,7 +93,7 @@ export default function BrandStory() {
       {/* Agenda/Story Right Art Image (7 columns on LG) */}
       <figure className="lg:col-span-7 relative m-0 p-0 min-h-[300px] lg:min-h-full bg-[#eae5de] overflow-hidden">
         <img
-          src="/assets/coffee-journey.webp"
+          src="/assets/coffee-journey.png"
           alt="Kopi Kenangan Coffee Journey"
           className="w-full h-full object-cover mix-blend-multiply filter saturate-[1.02] contrast-[1.05]"
         />
@@ -91,7 +101,8 @@ export default function BrandStory() {
           className="absolute left-8 top-12 text-[#4a453f] font-serif text-[clamp(0.9rem,1.4vw,1.1rem)] max-w-[280px]"
           style={{ writingMode: "vertical-rl" }}
         >
-          QUALITY COFFEE MADE WITH FRESH LOCAL INGREDIENTS.
+          QUALITY COFFEE MADE WITH FRESH <br />
+          LOCAL INGREDIENTS.
         </figcaption>
       </figure>
     </section>
