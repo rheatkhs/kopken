@@ -4,21 +4,21 @@ export default function BrandStory() {
   const storyPhases = [
     {
       phase: "Phase 01",
-      date: "2017.08",
-      title: "First Kopi Susu Kekinian",
-      desc: "Kopi Kenangan berdiri membawa mimpi menyajikan kopi berkualitas tinggi berlandaskan bahan lokal terbaik.",
+      date: "2017",
+      title: "First Outlet Opened",
+      desc: "Serving our signature Kopi Susu Kekinian made with local fresh ingredients.",
     },
     {
       phase: "Phase 02",
-      date: "2020.10",
-      title: "MUI Halal Certification",
-      desc: "Menjadi rantai kopi grab-and-go Kopi Susu Kekinian pertama yang memperoleh Sertifikasi Halal dari Majelis Ulama Indonesia.",
+      date: "2020",
+      title: "Halal Certification",
+      desc: "First grab-and-go coffee chain in Indonesia to obtain official Halal certification from MUI.",
     },
     {
       phase: "Phase 03",
-      date: "2025.11",
-      title: "World Branding Awards Winner",
-      desc: "Dinobatkan sebagai pemenang Brand of The Year kategori Café Chain dari Indonesia di ajang World Branding Awards.",
+      date: "2025",
+      title: "World Brand of The Year",
+      desc: "Awarded as the Café Chain winner from Indonesia at the World Branding Awards in London.",
     },
   ];
 
@@ -42,8 +42,7 @@ export default function BrandStory() {
               COFFEE JOURNEY
             </p>
             <h2 className="text-[1.1rem] font-serif text-[#cfa869] font-normal leading-snug">
-              Delivering on Our Promise: Harvest, Tasting, Roasting & Local
-              Producers
+              From Harvest to Your Cup
             </h2>
           </div>
 
@@ -73,18 +72,8 @@ export default function BrandStory() {
         <div className="relative z-10 pt-6">
           <a href="#catalog" className="ticket-pill">
             <span>LEARN MORE ABOUT US</span>
-            <svg
-              className="w-5 h-5 p-1 border border-current rounded-full"
-              viewBox="0 0 24 24"
-            >
-              <path
-                d="M5 12h12m-5-5 5 5-5 5"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+            <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
+              <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
         </div>
@@ -93,7 +82,7 @@ export default function BrandStory() {
       {/* Agenda/Story Right Art Image (7 columns on LG) */}
       <figure className="lg:col-span-7 relative m-0 p-0 min-h-[300px] lg:min-h-full bg-[#eae5de] overflow-hidden">
         <img
-          src="/assets/coffee-journey.png"
+          src="/assets/coffee-journey.webp"
           alt="Kopi Kenangan Coffee Journey"
           className="w-full h-full object-cover mix-blend-multiply filter saturate-[1.02] contrast-[1.05]"
         />
@@ -101,8 +90,7 @@ export default function BrandStory() {
           className="absolute left-8 top-12 text-[#4a453f] font-serif text-[clamp(0.9rem,1.4vw,1.1rem)] max-w-[280px]"
           style={{ writingMode: "vertical-rl" }}
         >
-          QUALITY COFFEE MADE WITH FRESH <br />
-          LOCAL INGREDIENTS.
+          QUALITY COFFEE MADE WITH FRESH LOCAL INGREDIENTS.
         </figcaption>
       </figure>
     </section>
