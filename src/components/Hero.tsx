@@ -44,7 +44,9 @@ export default function Hero() {
           <span className="block text-[#c82a2b] font-normal">
             KOPI KENANGAN
           </span>
-          <span className="block text-[0.55em] tracking-wider text-[#4a453f] font-normal mt-2">STANDS FOR YOU</span>
+          <span className="block text-[0.55em] tracking-wider text-[#4a453f] font-normal mt-2">
+            STANDS FOR YOU
+          </span>
         </h1>
 
         <p className="font-serif text-[clamp(1.5rem,3.1vw,2.8rem)] leading-none text-[#a51d1e] mt-[0.9rem] font-bold">
@@ -52,17 +54,18 @@ export default function Hero() {
         </p>
 
         <p className="max-w-[20rem] text-[#4a453f] text-[clamp(0.85rem,1.1vw,1.1rem)] leading-[1.38] mt-[1.05rem] mb-[clamp(2rem,3.8vw,3.8rem)] font-sans">
-          Serving high quality coffee, made with the freshest local ingredients to customers across Indonesia and the rest of the world.
+          Serving high quality coffee, made with the freshest local ingredients
+          to customers across Indonesia and the rest of the world.
         </p>
 
         {/* Action Meta & CTA Buttons */}
-        <div className="flex flex-wrap items-center gap-6 font-mono text-[11px] uppercase tracking-wider text-[#1f1d1a]">
+        <div className="flex flex-col items-start gap-6 font-mono text-[11px] uppercase tracking-wider text-[#1f1d1a]">
           <div className="flex flex-col gap-1.5">
-            <span>SEJAK // EST. 2017</span>
-            <span>BEANS // 100% INDONESIAN FRESH LOCAL INGREDIENTS</span>
+            <span>EST. 2017</span>
+            <span>100% INDONESIAN FRESH LOCAL INGREDIENTS</span>
           </div>
 
-          <div className="flex gap-3">
+          <div>
             <a
               href="#catalog"
               className="px-5 py-2.5 bg-[#1f1d1a] text-white hover:bg-[#c82a2b] transition-all rounded-full flex items-center border border-[#1f1d1a] font-bold"
@@ -76,8 +79,8 @@ export default function Hero() {
       {/* Hero Art Block (Background WebP Image with vertical stamp-tag) */}
       <figure className="absolute inset-0 z-1 w-full h-full m-0 p-0">
         <img
-          src="/assets/hero-kopi-kenangan.webp"
-          alt="Kopi Kenangan Specialty Coffee"
+          src="/assets/hero-kopi-kenangan-1.png"
+          alt="Kopi Kenangan"
           className="w-full h-full object-cover object-center mix-blend-multiply opacity-80 saturate-[1.05] contrast-[1.02]"
         />
 
@@ -87,7 +90,9 @@ export default function Hero() {
           style={{ writingMode: "vertical-rl" }}
         >
           <span className="tracking-widest">WORLD BRAND WINNER 25-26</span>
-          <span className="text-[10px] text-[#c82a2b]">CAFÉ CHAIN CATEGORY</span>
+          <span className="text-[10px] text-[#c82a2b]">
+            CAFÉ CHAIN CATEGORY
+          </span>
         </div>
       </figure>
     </section>
