@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Coffee, Info, Zap, Sparkles } from "lucide-react";
+import { Info, Zap, Sparkles } from "lucide-react";
 
 export default function Catalog() {
   const [filter, setFilter] = useState("ALL");
@@ -60,7 +60,7 @@ export default function Catalog() {
       name: "MATCHA LATTE NEO-MIRAI",
       japanese: "ネオ抹茶ラテ",
       category: "NON-COFFEE",
-      desc: "Bubuk matcha asli Uji Kyoto dipadukan dengan pemanis alami tebu pilihan dan susu murni segar berstandar tinggi.",
+      desc: "Matcha asli Uji Kyoto dipadukan dengan pemanis alami tebu pilihan dan susu murni segar berstandar tinggi.",
       price: { Regular: 22000, Large: 26000 },
       badge: "AUTHENTIC",
       notes: { sweetness: 3, intensity: 1, acidity: 0, caffeine: "Low" },
@@ -85,16 +85,16 @@ export default function Catalog() {
       : products.filter((p) => p.category === filter);
 
   return (
-    <section id="catalog" className="py-24 bg-grid-pattern border-b border-white/10 relative">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="catalog" className="py-24 border-b border-[#c8c0b5] relative">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-neutral-800">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#c8c0b5]">
           <div>
-            <div className="text-red-500 font-mono text-xs font-bold tracking-widest uppercase mb-2">
+            <div className="text-[#c82a2b] font-mono text-[11px] font-bold tracking-widest uppercase mb-2">
               03 // MENU CATALOGUE
             </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-white font-sans tracking-tight uppercase">
-              KATALOG <span className="text-gradient-red">PREMIUM</span>
+            <h2 className="text-3xl sm:text-5xl font-light font-display uppercase tracking-tight text-[#1f1d1a]">
+              KATALOG <span className="text-[#c82a2b]">PREMIUM</span>
             </h2>
           </div>
           <div className="flex flex-wrap gap-2 mt-6 md:mt-0">
@@ -102,10 +102,10 @@ export default function Catalog() {
               <button
                 key={cat}
                 onClick={() => setFilter(cat)}
-                className={`px-4 py-2 text-xs font-mono rounded transition-all ${
+                className={`px-4 py-2 text-[10px] font-mono rounded transition-all uppercase tracking-wider ${
                   filter === cat
-                    ? "bg-red-600 text-white font-bold"
-                    : "bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-neutral-700"
+                    ? "bg-[#c82a2b] text-white font-bold"
+                    : "bg-[#eae5de] text-[#4a453f] border border-[#c8c0b5] hover:border-neutral-500"
                 }`}
               >
                 {cat}
@@ -123,64 +123,61 @@ export default function Catalog() {
             return (
               <div
                 key={p.id}
-                className="bg-[#121420]/80 border border-neutral-800 hover:border-red-500/40 transition-all duration-300 rounded-2xl p-6 flex flex-col justify-between group relative overflow-hidden backdrop-blur-sm"
+                className="bg-[#eae5de]/60 border border-[#c8c0b5] hover:border-[#c82a2b]/70 hover:shadow-md transition-all duration-300 rounded-2xl p-6 flex flex-col justify-between group relative overflow-hidden"
               >
-                {/* Visual Glass background design */}
-                <div className={`absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl ${p.color} opacity-10 pointer-events-none transition-all group-hover:scale-125`}></div>
-
                 <div>
                   {/* Badge & Jp Title */}
                   <div className="flex justify-between items-center mb-4">
-                    <span className="text-[10px] font-mono font-bold bg-neutral-950 border border-neutral-800 text-red-400 px-2 py-0.5 rounded">
+                    <span className="text-[10px] font-mono font-bold bg-[#fcfbfa] border border-[#c8c0b5] text-[#c82a2b] px-2 py-0.5 rounded">
                       {p.badge}
                     </span>
-                    <span className="text-[10px] font-mono text-neutral-500">{p.japanese}</span>
+                    <span className="text-[10px] font-mono text-[#80766b]">{p.japanese}</span>
                   </div>
 
                   {/* Name */}
-                  <h3 className="text-lg font-bold text-white font-sans tracking-wide mb-2 group-hover:text-red-400 transition-colors">
+                  <h3 className="text-base font-bold text-[#1f1d1a] font-sans tracking-wide mb-2 group-hover:text-[#c82a2b] transition-colors">
                     {p.name}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-xs text-neutral-400 font-sans leading-relaxed mb-6 line-clamp-3">
+                  <p className="text-xs text-[#4a453f] font-sans leading-relaxed mb-6 line-clamp-3">
                     {p.desc}
                   </p>
                 </div>
 
                 <div>
                   {/* Size Switcher */}
-                  <div className="flex items-center justify-between mb-4 bg-neutral-950/80 p-1.5 rounded-lg border border-neutral-900">
-                    <span className="text-[10px] font-mono text-neutral-400 pl-2">UKURAN</span>
+                  <div className="flex items-center justify-between mb-4 bg-[#eae5de] p-1.5 rounded-lg border border-[#c8c0b5]/50">
+                    <span className="text-[10px] font-mono text-[#80766b] pl-2">UKURAN</span>
                     <div className="flex gap-1">
                       {(["Regular", "Large"] as const).map((sz) => (
                         <button
                           key={sz}
                           onClick={() => setSizeMap((prev) => ({ ...prev, [p.id]: sz }))}
-                          className={`text-[9px] font-mono py-1 px-3.5 rounded transition-all ${
+                          className={`text-[9px] font-mono py-1 px-3.5 rounded transition-all uppercase ${
                             size === sz
-                              ? "bg-red-950/40 border border-red-500/30 text-red-400 font-bold"
-                              : "text-neutral-500 hover:text-neutral-300"
+                              ? "bg-[#c82a2b] text-white font-bold"
+                              : "text-[#4a453f] hover:text-[#1f1d1a]"
                           }`}
                         >
-                          {sz.toUpperCase()}
+                          {sz}
                         </button>
                       ))}
                     </div>
                   </div>
 
                   {/* Pricing and Action */}
-                  <div className="flex items-center justify-between pt-4 border-t border-neutral-900">
+                  <div className="flex items-center justify-between pt-4 border-t border-[#c8c0b5]/60">
                     <div>
-                      <span className="text-[9px] font-mono text-neutral-500 block">RP / NETT</span>
-                      <span className="text-lg font-mono font-bold text-white">
+                      <span className="text-[9px] font-mono text-[#80766b] block">RP / NETT</span>
+                      <span className="text-base font-mono font-bold text-[#1f1d1a]">
                         {price.toLocaleString("id-ID")}
                       </span>
                     </div>
 
                     <button
                       onClick={() => setSelectedProduct(p.id)}
-                      className="px-4 py-2 bg-neutral-900 hover:bg-neutral-800 text-neutral-300 text-xs font-mono rounded border border-neutral-800 hover:border-neutral-700 transition-all flex items-center gap-1.5"
+                      className="px-4 py-2 bg-[#fcfbfa] hover:bg-[#eae5de] text-[#1f1d1a] text-xs font-mono rounded border border-[#c8c0b5] transition-all flex items-center gap-1.5"
                     >
                       <Info className="w-3.5 h-3.5" />
                       DETAILS
@@ -194,77 +191,77 @@ export default function Catalog() {
 
         {/* Modal Info Detail */}
         {selectedProduct && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 backdrop-blur-sm">
+          <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm">
             {/* Modal Body */}
             {(() => {
               const p = products.find((prod) => prod.id === selectedProduct)!;
               return (
-                <div className="bg-[#121420] border border-neutral-800 rounded-2xl max-w-lg w-full p-6 sm:p-8 relative overflow-hidden font-mono">
+                <div className="bg-[#f4f0eb] border border-[#c8c0b5] rounded-2xl max-w-lg w-full p-6 sm:p-8 relative overflow-hidden font-mono text-[#1f1d1a]">
                   {/* Decorative Header */}
-                  <div className="flex justify-between items-center pb-4 mb-6 border-b border-neutral-800">
+                  <div className="flex justify-between items-center pb-4 mb-6 border-b border-[#c8c0b5]">
                     <div className="flex items-center gap-2">
-                      <Sparkles className="w-4 h-4 text-amber-400" />
-                      <span className="text-xs font-bold text-white uppercase tracking-widest">
+                      <Sparkles className="w-4 h-4 text-[#b38b4d]" />
+                      <span className="text-xs font-bold uppercase tracking-widest text-[#1f1d1a]">
                         SPECIFICATION PANEL
                       </span>
                     </div>
                     <button
                       onClick={() => setSelectedProduct(null)}
-                      className="text-neutral-400 hover:text-white text-xs bg-neutral-900 border border-neutral-800 px-3 py-1 rounded"
+                      className="text-[#4a453f] hover:text-[#1f1d1a] text-xs bg-[#eae5de] border border-[#c8c0b5] px-3 py-1 rounded"
                     >
                       [CLOSE]
                     </button>
                   </div>
 
-                  <h3 className="text-xl font-bold text-white mb-1 font-sans">{p.name}</h3>
-                  <p className="text-xs text-red-400 mb-6">{p.japanese} // {p.category}</p>
+                  <h3 className="text-xl font-bold font-sans text-[#1f1d1a] mb-1">{p.name}</h3>
+                  <p className="text-xs text-[#c82a2b] mb-6">{p.japanese} // {p.category}</p>
 
                   {/* Flavor Metrics */}
                   <div className="space-y-4 mb-6">
                     <div>
                       <div className="flex justify-between text-xs mb-1">
-                        <span className="text-neutral-400">SWEETNESS</span>
-                        <span className="text-white">{"★".repeat(p.notes.sweetness)}{"☆".repeat(5 - p.notes.sweetness)}</span>
+                        <span className="text-[#4a453f]">SWEETNESS</span>
+                        <span className="text-[#1f1d1a]">{"★".repeat(p.notes.sweetness)}{"☆".repeat(5 - p.notes.sweetness)}</span>
                       </div>
-                      <div className="w-full bg-neutral-900 h-1.5 rounded-full overflow-hidden">
-                        <div className="bg-red-500 h-full" style={{ width: `${p.notes.sweetness * 20}%` }}></div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <div className="flex justify-between text-xs mb-1">
-                        <span className="text-neutral-400">INTENSITY</span>
-                        <span className="text-white">{"★".repeat(p.notes.intensity)}{"☆".repeat(5 - p.notes.intensity)}</span>
-                      </div>
-                      <div className="w-full bg-neutral-900 h-1.5 rounded-full overflow-hidden">
-                        <div className="bg-red-500 h-full" style={{ width: `${p.notes.intensity * 20}%` }}></div>
+                      <div className="w-full bg-[#eae5de] h-1.5 rounded-full overflow-hidden">
+                        <div className="bg-[#c82a2b] h-full" style={{ width: `${p.notes.sweetness * 20}%` }}></div>
                       </div>
                     </div>
 
                     <div>
                       <div className="flex justify-between text-xs mb-1">
-                        <span className="text-neutral-400">ACIDITY</span>
-                        <span className="text-white">{"★".repeat(p.notes.acidity)}{"☆".repeat(5 - p.notes.acidity)}</span>
+                        <span className="text-[#4a453f]">INTENSITY</span>
+                        <span className="text-[#1f1d1a]">{"★".repeat(p.notes.intensity)}{"☆".repeat(5 - p.notes.intensity)}</span>
                       </div>
-                      <div className="w-full bg-neutral-900 h-1.5 rounded-full overflow-hidden">
-                        <div className="bg-red-500 h-full" style={{ width: `${p.notes.acidity * 20}%` }}></div>
+                      <div className="w-full bg-[#eae5de] h-1.5 rounded-full overflow-hidden">
+                        <div className="bg-[#c82a2b] h-full" style={{ width: `${p.notes.intensity * 20}%` }}></div>
+                      </div>
+                    </div>
+
+                    <div>
+                      <div className="flex justify-between text-xs mb-1">
+                        <span className="text-[#4a453f]">ACIDITY</span>
+                        <span className="text-[#1f1d1a]">{"★".repeat(p.notes.acidity)}{"☆".repeat(5 - p.notes.acidity)}</span>
+                      </div>
+                      <div className="w-full bg-[#eae5de] h-1.5 rounded-full overflow-hidden">
+                        <div className="bg-[#c82a2b] h-full" style={{ width: `${p.notes.acidity * 20}%` }}></div>
                       </div>
                     </div>
                   </div>
 
                   {/* Extra Info Panel */}
-                  <div className="bg-neutral-950 p-4 rounded-xl border border-neutral-900 text-xs space-y-2 mb-6">
+                  <div className="bg-[#eae5de] p-4 rounded-xl border border-[#c8c0b5] text-xs space-y-2 mb-6">
                     <div className="flex justify-between">
-                      <span className="text-neutral-500">Caffeine Profile:</span>
-                      <span className="text-amber-400 font-bold">{p.notes.caffeine}</span>
+                      <span className="text-[#4a453f]">Caffeine Profile:</span>
+                      <span className="text-[#c82a2b] font-bold">{p.notes.caffeine}</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-neutral-500">Optimal Temperature:</span>
-                      <span className="text-white">4.0°C (Chilled) / 65.0°C (Hot)</span>
+                      <span className="text-[#4a453f]">Optimal Temperature:</span>
+                      <span className="text-[#1f1d1a]">4.0°C (Chilled) / 65.0°C (Hot)</span>
                     </div>
                     <div className="flex justify-between">
-                      <span className="text-neutral-500">Roast Profile:</span>
-                      <span className="text-white">Medium-Dark Roast</span>
+                      <span className="text-[#4a453f]">Roast Profile:</span>
+                      <span className="text-[#1f1d1a]">Medium-Dark Roast</span>
                     </div>
                   </div>
 
@@ -275,10 +272,10 @@ export default function Catalog() {
                         alert(`Pesanan ${p.name} simulasi ditambahkan! Unduh aplikasi Kopi Kenangan untuk memesan produk ini.`);
                         setSelectedProduct(null);
                       }}
-                      className="flex-1 py-3 bg-red-600 hover:bg-red-500 text-white text-xs font-bold tracking-wider rounded-lg flex items-center justify-center gap-2 border border-red-500/30 transition-all"
+                      className="flex-1 py-3 bg-[#c82a2b] hover:bg-[#a51d1e] text-white text-xs font-bold tracking-wider rounded-lg flex items-center justify-center gap-2 transition-all"
                     >
                       <Zap className="w-4 h-4" />
-                      ORDER SECURELY NOW
+                      ORDER NOW
                     </button>
                   </div>
                 </div>
