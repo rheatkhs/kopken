@@ -29,11 +29,11 @@ export default function BrandStory() {
     >
       {/* Agenda/Story Left Dark Panel (5 columns on LG) */}
       <div className="lg:col-span-5 bg-[#12131a] text-[#fcfbfa] p-[clamp(1.5rem,2.5vw,2.5rem)] relative overflow-hidden flex flex-col justify-between">
-        {/* Decorative Coffee Journey Image Overlay */}
+        {/* Background Coffee Journey Image */}
         <img
           src="/assets/coffee-journey-1.png"
-          alt="Coffee Journey Overlay"
-          className="absolute -right-20 top-0 z-0 w-72 h-72 opacity-25 pointer-events-none mix-blend-lighten object-contain"
+          alt="Coffee Journey Background"
+          className="absolute inset-0 z-0 w-full h-full object-cover opacity-20 pointer-events-none mix-blend-overlay"
         />
 
         <div className="relative z-10 space-y-6">
