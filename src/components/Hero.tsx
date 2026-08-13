@@ -53,7 +53,7 @@ export default function Hero() {
           <span className="block text-[#c82a2b] font-normal">
             KOPI KENANGAN
           </span>
-          <span className="block">STANDS FOR YOU</span>
+          <span className="block text-[0.55em] tracking-wider text-[#4a453f] font-normal mt-2">STANDS FOR YOU</span>
         </h1>
 
         <p className="font-serif text-[clamp(1.5rem,3.1vw,2.8rem)] leading-none text-[#a51d1e] mt-[0.9rem] font-bold">
