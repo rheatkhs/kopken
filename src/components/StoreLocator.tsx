@@ -193,10 +193,12 @@ export default function StoreLocator() {
 
                 <button
                   onClick={() => alert(`Membuka rute GPS ke: ${store.name}`)}
-                  className="w-full py-2.5 bg-[#fcfbfa] hover:bg-[#eae5de] text-[#1f1d1a] text-xs font-mono font-bold rounded border border-[#c8c0b5] transition-all flex items-center justify-center gap-2"
+                  className="ticket-pill w-full justify-center"
                 >
-                  <Navigation className="w-3.5 h-3.5 text-[#c82a2b]" />
-                  OPEN IN MAPS
+                  <span>OPEN IN MAPS</span>
+                  <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
+                    <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  </svg>
                 </button>
               </div>
             </div>

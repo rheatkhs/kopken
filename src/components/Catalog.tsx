@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Info, Zap, Sparkles } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export default function Catalog() {
   const [filter, setFilter] = useState("ALL");
@@ -14,7 +14,7 @@ export default function Catalog() {
     {
       id: 1,
       name: "KOPI KENANGAN MANTAN",
-      japanese: "元カレの思い出",
+      japanese: "元カレ의思い出",
       category: "CLASSICS",
       desc: "Kopi susu legendaris dengan gula aren murni pilihan. Cita rasa manis lembut berpadu sempurna dengan kehangatan kopi arabika robusta pilihan.",
       price: { Regular: 18000, Large: 22000 },
@@ -177,10 +177,13 @@ export default function Catalog() {
 
                     <button
                       onClick={() => setSelectedProduct(p.id)}
-                      className="px-4 py-2 bg-[#fcfbfa] hover:bg-[#eae5de] text-[#1f1d1a] text-xs font-mono rounded border border-[#c8c0b5] transition-all flex items-center gap-1.5"
+                      className="ticket-pill"
+                      style={{ minHeight: "36px", padding: "0.4rem 0.8rem" }}
                     >
-                      <Info className="w-3.5 h-3.5" />
-                      DETAILS
+                      <span>DETAILS</span>
+                      <svg className="w-4 h-4 p-0.5 border border-current rounded-full" viewBox="0 0 24 24">
+                        <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
                     </button>
                   </div>
                 </div>
@@ -266,16 +269,18 @@ export default function Catalog() {
                   </div>
 
                   {/* Modal CTA */}
-                  <div className="flex gap-3">
+                  <div>
                     <button
                       onClick={() => {
                         alert(`Pesanan ${p.name} simulasi ditambahkan! Unduh aplikasi Kopi Kenangan untuk memesan produk ini.`);
                         setSelectedProduct(null);
                       }}
-                      className="flex-1 py-3 bg-[#c82a2b] hover:bg-[#a51d1e] text-white text-xs font-bold tracking-wider rounded-lg flex items-center justify-center gap-2 transition-all"
+                      className="ticket-pill w-full justify-center"
                     >
-                      <Zap className="w-4 h-4" />
-                      ORDER NOW
+                      <span>ORDER NOW</span>
+                      <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
+                        <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
                     </button>
                   </div>
                 </div>

@@ -44,16 +44,12 @@ export default function Hero() {
           <span className="block text-[#c82a2b] font-normal">
             KOPI KENANGAN
           </span>
-          <span className="block text-[0.55em] tracking-wider text-[#4a453f] font-normal mt-2">
+          <span className="block text-[0.55em] tracking-wider text-[#4a453f] font-normal mt-[1.5rem]">
             STANDS FOR YOU
           </span>
         </h1>
 
-        <p className="font-serif text-[clamp(1.5rem,3.1vw,2.8rem)] leading-none text-[#a51d1e] mt-[0.9rem] font-bold">
-          Brand of The Year
-        </p>
-
-        <p className="max-w-[20rem] text-[#4a453f] text-[clamp(0.85rem,1.1vw,1.1rem)] leading-[1.38] mt-[1.05rem] mb-[clamp(2rem,3.8vw,3.8rem)] font-sans">
+        <p className="max-w-[20rem] text-[#4a453f] text-[clamp(0.85rem,1.1vw,1.1rem)] leading-[1.38] mt-[1.5rem] mb-[clamp(2rem,3.8vw,3.8rem)] font-sans">
           Serving high quality coffee, made with the freshest local ingredients
           to customers across Indonesia and the rest of the world.
         </p>
@@ -66,11 +62,11 @@ export default function Hero() {
           </div>
 
           <div>
-            <a
-              href="#catalog"
-              className="px-5 py-2.5 bg-[#1f1d1a] text-white hover:bg-[#c82a2b] transition-all rounded-full flex items-center border border-[#1f1d1a] font-bold"
-            >
-              EXPLORE CATALOGUE →
+            <a href="#catalog" className="ticket-pill">
+              <span>EXPLORE CATALOGUE</span>
+              <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
+                <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
             </a>
           </div>
         </div>
@@ -79,7 +75,7 @@ export default function Hero() {
       {/* Hero Art Block (Background WebP Image with vertical stamp-tag) */}
       <figure className="absolute inset-0 z-1 w-full h-full m-0 p-0">
         <img
-          src="/assets/hero-kopi-kenangan-1.png"
+          src="/assets/hero-kopi-kenangan.png"
           alt="Kopi Kenangan"
           className="w-full h-full object-cover object-center mix-blend-multiply opacity-80 saturate-[1.05] contrast-[1.02]"
         />

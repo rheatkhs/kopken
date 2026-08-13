@@ -30,11 +30,11 @@ export default function Manifesto() {
         </div>
 
         <div className="relative z-10 pt-4">
-          <a href="#catalog" className="text-action text-[#fcfbfa] hover:text-[#1f1d1a]">
+          <a href="#catalog" className="ticket-pill">
             <span>COFFEE JOURNEY</span>
-            <span className="text-action-icon border-white text-white">
-              <span className="text-action-arrow">→</span>
-            </span>
+            <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
+              <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
           </a>
         </div>
       </div>

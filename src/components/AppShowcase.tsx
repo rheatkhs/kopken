@@ -186,10 +186,12 @@ export default function AppShowcase() {
                 href="https://kopikenangan.onelink.me/4u50/tabak"
                 target="_blank"
                 rel="noreferrer"
-                className="px-4 py-2 bg-[#eae5de] border border-[#c8c0b5] hover:border-neutral-500 text-[#1f1d1a] rounded transition-all flex items-center gap-2 font-bold"
+                className="ticket-pill"
               >
-                <Smartphone className="w-3.5 h-3.5 text-[#c82a2b]" />
-                KENANGAN APP (APP STORE & GOOGLE PLAY)
+                <span>KENANGAN APP (APP STORE & GOOGLE PLAY)</span>
+                <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
+                  <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
               </a>
             </div>
           </div>
