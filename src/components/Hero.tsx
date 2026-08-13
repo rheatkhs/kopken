@@ -143,11 +143,11 @@ export default function Hero() {
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute right-[clamp(1.3rem,3.2vw,3rem)] top-[clamp(4.9rem,8vw,7rem)] z-10 w-auto h-auto py-8 px-4 border border-[#1f1d1a]/30 bg-[#eae5de]/90 hidden lg:flex flex-col justify-between items-center gap-6 shadow-md shadow-neutral-900/10 text-[#1f1d1a] font-mono text-[clamp(0.58rem,0.9vw,0.76rem)] leading-tight text-center"
+          className="absolute right-[clamp(1.3rem,3.2vw,3rem)] top-[clamp(4.9rem,8vw,7rem)] z-10 w-auto h-auto py-5 px-2.5 border border-[#1f1d1a]/30 bg-[#eae5de]/90 hidden lg:flex flex-col justify-between items-center gap-4 shadow-md shadow-neutral-900/10 text-[#1f1d1a] font-mono text-[clamp(0.52rem,0.75vw,0.65rem)] leading-tight text-center"
           style={{ writingMode: "vertical-rl" }}
         >
           <span className="tracking-widest">WORLD BRAND WINNER 2025-2026</span>
-          <span className="text-[10px] text-[#c82a2b]">CAFÉ CHAIN CATEGORY</span>
+          <span className="text-[9px] text-[#c82a2b]">CAFÉ CHAIN CATEGORY</span>
         </motion.div>
       </figure>
     </section>
