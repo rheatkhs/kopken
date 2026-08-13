@@ -84,8 +84,8 @@ export default function BrandStory() {
       {/* Agenda/Story Right Art Image (7 columns on LG) */}
       <figure className="lg:col-span-7 relative m-0 p-0 min-h-[300px] lg:min-h-full bg-[#eae5de] overflow-hidden">
         <img
-          src="/assets/agenda-architecture.webp"
-          alt="Coffee Architecture"
+          src="/assets/coffee-journey.webp"
+          alt="Kopi Kenangan Coffee Journey"
           className="w-full h-full object-cover mix-blend-multiply filter saturate-[1.02] contrast-[1.05]"
         />
         <figcaption
