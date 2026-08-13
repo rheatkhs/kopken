@@ -138,15 +138,15 @@ export default function Hero() {
           className="w-full h-full object-cover object-center mix-blend-multiply saturate-[1.05] contrast-[1.02]"
         />
 
-        {/* Vertical Stamp box on the right of the Hero Art - Hidden on Mobile */}
+        {/* Vertical Stamp box on the right of the Hero Art - Hidden on Mobile/Tablet */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute right-[clamp(1.3rem,3.2vw,3rem)] top-[clamp(4.9rem,8vw,7rem)] z-10 w-[clamp(3.5rem,5.6vw,5.4rem)] h-[clamp(7.2rem,12vw,11.5rem)] border border-[#1f1d1a]/30 bg-[#eae5de]/90 hidden md:flex flex-col justify-between items-center py-6 px-1.5 shadow-md shadow-neutral-900/10 text-[#1f1d1a] font-mono text-[clamp(0.58rem,0.9vw,0.76rem)] leading-tight text-center"
+          className="absolute right-[clamp(1.3rem,3.2vw,3rem)] top-[clamp(4.9rem,8vw,7rem)] z-10 w-[clamp(3.5rem,5.6vw,5.4rem)] h-[clamp(7.2rem,12vw,11.5rem)] border border-[#1f1d1a]/30 bg-[#eae5de]/90 hidden lg:flex flex-col justify-between items-center py-6 px-1.5 shadow-md shadow-neutral-900/10 text-[#1f1d1a] font-mono text-[clamp(0.58rem,0.9vw,0.76rem)] leading-tight text-center"
           style={{ writingMode: "vertical-rl" }}
         >
-          <span className="tracking-widest">WORLD BRAND WINNER 25-26</span>
+          <span className="tracking-widest">WORLD BRAND WINNER 2025-2026</span>
           <span className="text-[10px] text-[#c82a2b]">CAFÉ CHAIN CATEGORY</span>
         </motion.div>
       </figure>
