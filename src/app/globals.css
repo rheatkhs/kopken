@@ -2,6 +2,11 @@
 @import "tailwindcss";
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 74px;
+  }
+
   :root {
     --paper: #f4f0eb;
     --paper-soft: #eae5de;

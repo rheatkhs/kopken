@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
   title: "KOPI KENANGAN — Coffee Memories // High Quality Local Coffee",
@@ -14,6 +15,7 @@ export default function RootLayout({
   return (
     <html lang="id" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-[#f4f0eb] text-[#1f1d1a] selection:bg-[#c82a2b] selection:text-white">
+        <SmoothScroll />
         {children}
       </body>
     </html>
