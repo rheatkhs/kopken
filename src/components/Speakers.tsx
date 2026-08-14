@@ -12,13 +12,13 @@ export default function Speakers() {
       name: "James Prananto",
       role: "CBO & Co-Founder",
       label: "FOUNDER",
-      image: "/assets/speaker-keisuke-tanaka.webp",
+      image: "/assets/james.png",
     },
     {
       name: "Cynthia Chaerunnisa",
       role: "CMO & Co-Founder",
       label: "FOUNDER",
-      image: "/assets/speaker-yumi-nakamura.webp",
+      image: "/assets/cynthia.png",
     },
   ];
 
@@ -75,8 +75,18 @@ export default function Speakers() {
 
         <a href="#story" className="ticket-pill mt-6">
           <span>COFFEE JOURNEY</span>
-          <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
-            <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+          <svg
+            className="w-5 h-5 p-1 border border-current rounded-full"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M5 12h12m-5-5 5 5-5 5"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
           </svg>
         </a>
       </div>

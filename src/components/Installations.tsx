@@ -5,17 +5,17 @@ export default function Installations() {
     {
       title: "Harmonic Extraction Lab",
       category: "Immersive Sensory Environment",
-      image: "/assets/install-flux.webp",
+      image: "/assets/harmonic.png",
     },
     {
       title: "Aroma Compiler",
       category: "Generative Coffee Sculpture",
-      image: "/assets/install-dream.webp",
+      image: "/assets/aroma.png",
     },
     {
       title: "Echoes of Roastery",
       category: "Acoustic Bean Soundscape",
-      image: "/assets/install-echoes.webp",
+      image: "/assets/roastery.png",
     },
   ];
 
