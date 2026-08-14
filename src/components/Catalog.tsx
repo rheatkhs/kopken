@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function Catalog() {
+export default function Catalog({ limit }: { limit?: number }) {
   const [filter, setFilter] = useState("ALL");
   const [selectedProduct, setSelectedProduct] = useState<number | null>(null);
   const [sizeMap, setSizeMap] = useState<Record<number, "Regular" | "Large">>({});
@@ -206,6 +206,8 @@ export default function Catalog() {
       ? products
       : products.filter((p) => p.category === filter);
 
+  const displayedProducts = limit ? filteredProducts.slice(0, limit) : filteredProducts;
+
   return (
     <section id="catalog" className="py-24 border-b border-[#c8c0b5] relative bg-[#fcfbfa]">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
@@ -215,30 +217,43 @@ export default function Catalog() {
             <div className="text-[#c82a2b] font-mono text-[11px] font-bold tracking-widest uppercase mb-2">
               03 // MENU CATALOGUE
             </div>
-            <h2 className="text-3xl sm:text-5xl font-light font-display uppercase tracking-tight text-[#1f1d1a]">
-              KATALOG <span className="text-[#c82a2b]">PREMIUM</span>
-            </h2>
+            {limit ? (
+              <h2 className="text-3xl sm:text-5xl font-light font-display uppercase tracking-tight text-[#1f1d1a]">
+                FEATURED <span className="text-[#c82a2b]">MENU</span>
+              </h2>
+            ) : (
+              <div className="space-y-1">
+                <a href="/" className="text-[10px] font-mono text-[#80766b] hover:text-[#c82a2b] transition-colors block mb-1">
+                  &lt; KEMBALI KE BERANDA
+                </a>
+                <h2 className="text-3xl sm:text-5xl font-light font-display uppercase tracking-tight text-[#1f1d1a]">
+                  SEMUA <span className="text-[#c82a2b]">MENU</span>
+                </h2>
+              </div>
+            )}
           </div>
-          <div className="flex flex-wrap gap-2 mt-6 md:mt-0">
-            {categories.map((cat) => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-4 py-2 text-[10px] font-mono rounded transition-all uppercase tracking-wider ${
-                  filter === cat
-                    ? "bg-[#c82a2b] text-white font-bold"
-                    : "bg-[#eae5de] text-[#4a453f] border border-[#c8c0b5] hover:border-neutral-500 cursor-pointer"
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
-          </div>
+          {!limit && (
+            <div className="flex flex-wrap gap-2 mt-6 md:mt-0">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setFilter(cat)}
+                  className={`px-4 py-2 text-[10px] font-mono rounded transition-all uppercase tracking-wider ${
+                    filter === cat
+                      ? "bg-[#c82a2b] text-white font-bold"
+                      : "bg-[#eae5de] text-[#4a453f] border border-[#c8c0b5] hover:border-neutral-500 cursor-pointer"
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+          )}
         </div>
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProducts.map((p) => {
+          {displayedProducts.map((p) => {
             const size = sizeMap[p.id] || "Regular";
             const price = p.price[size];
 
@@ -329,6 +344,18 @@ export default function Catalog() {
             );
           })}
         </div>
+
+        {/* View All Button for Homepage / Limit Mode */}
+        {limit && (
+          <div className="flex justify-center mt-16">
+            <a href="/catalog" className="ticket-pill">
+              <span>LIHAT SEMUA MENU / VIEW ALL</span>
+              <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
+                <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+          </div>
+        )}
 
         {/* Modal Info Detail with Framer Motion AnimatePresence */}
         <AnimatePresence>

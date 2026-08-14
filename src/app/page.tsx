@@ -21,7 +21,7 @@ export default function Home() {
         <Speakers />
         <Installations />
         <Manifesto />
-        <Catalog />
+        <Catalog limit={6} />
         <AppShowcase />
         <StoreLocator />
         <Vouchers />
