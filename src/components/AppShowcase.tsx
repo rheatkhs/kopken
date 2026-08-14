@@ -25,7 +25,7 @@ export default function AppShowcase() {
       className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#c8c0b5] overflow-hidden lg:h-[clamp(23.1rem,43vw,38.7rem)]"
     >
       {/* Left Panel: GIF Phone Preview (7 columns on LG) */}
-      <div className="lg:col-span-7 relative m-0 p-6 lg:p-0 min-h-[350px] lg:min-h-full bg-[#eae5de] overflow-hidden flex items-center justify-center border-r border-[#c8c0b5]/50">
+      <div className="lg:col-span-7 relative m-0 p-6 lg:p-0 min-h-[350px] lg:min-h-full bg-[#f4f0eb] overflow-hidden flex items-center justify-center border-r border-[#c8c0b5]/50">
         <img
           src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1605250463718-RAWESAHFYEWXB7PXRP0B/hp-2.gif?format=500w"
           alt="Kopi Kenangan App Preview"
@@ -70,7 +70,7 @@ export default function AppShowcase() {
         </div>
 
         {/* Download Badges at bottom */}
-        <div className="relative z-10 pt-6 border-t border-[#cfa869]/20 flex flex-wrap items-center gap-3">
+        <div className="relative z-10 pt-4 flex flex-wrap items-center gap-3">
           <a
             href="https://play.google.com/store/apps/details?gl=US&hl=en&id=com.kopikenangan"
             target="_blank"
@@ -80,7 +80,7 @@ export default function AppShowcase() {
             <img
               src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1611739412718-FB769K21E5S37C17MOMX/app-donlod-01.png"
               alt="Google Play Store"
-              className="h-9 object-contain"
+              className="h-[46px] object-contain"
             />
           </a>
           <a
@@ -92,7 +92,7 @@ export default function AppShowcase() {
             <img
               src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1611739426194-A3PTF4R4K1Z2PP0JYOQ6/app-donlod-02.png"
               alt="Apple App Store"
-              className="h-9 object-contain"
+              className="h-[46px] object-contain"
             />
           </a>
         </div>
