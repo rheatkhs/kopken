@@ -28,7 +28,7 @@ export default function AppShowcase() {
       <div className="lg:col-span-7 relative m-0 p-6 lg:p-0 min-h-[350px] lg:min-h-full bg-[#f4f0eb] overflow-hidden flex items-center justify-center border-r border-[#c8c0b5]/50">
         <img
           src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1605250463718-RAWESAHFYEWXB7PXRP0B/hp-2.gif?format=500w"
-          alt="Kopi Kenangan App Preview"
+          alt="App Preview"
           className="h-[85%] max-h-[420px] object-contain transition-transform duration-500 hover:scale-105 drop-shadow-lg z-10"
         />
         <figcaption
@@ -44,7 +44,7 @@ export default function AppShowcase() {
         <div className="relative z-10 space-y-8">
           <div>
             <p className="font-display text-[clamp(1.8rem,3vw,2.4rem)] font-light leading-none uppercase text-[#fcfbfa] mb-2">
-              Kopi Kenangan App
+              App
             </p>
             <h2 className="text-[10px] font-mono text-[#cfa869] font-bold tracking-widest uppercase leading-relaxed">
               Find out how to get free vouchers, priority access and extra benefits.
