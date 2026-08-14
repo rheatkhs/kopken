@@ -1,11 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Smartphone, Gift, Award, QrCode } from "lucide-react";
+import { Gift, Award } from "lucide-react";
 
 export default function AppShowcase() {
   const [tier, setTier] = useState<"BRONZE" | "GOLD" | "LEGEND">("GOLD");
-  const [points, setPoints] = useState(2450);
 
   const tiers = {
     BRONZE: {
@@ -37,7 +36,7 @@ export default function AppShowcase() {
               04 // KOPI KENANGAN APP
             </div>
             <h2 className="text-3xl sm:text-5xl font-light font-display uppercase tracking-tight text-[#1f1d1a]">
-              APLIKASI & <span className="text-[#c82a2b]">KENANGAN POINTS</span>
+              KOPI KENANGAN <span className="text-[#c82a2b]">APP</span>
             </h2>
           </div>
           <p className="text-[#4a453f] font-sans text-xs max-w-sm mt-4 md:mt-0 leading-relaxed font-bold">
@@ -47,86 +46,20 @@ export default function AppShowcase() {
 
         {/* Display Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Mobile Simulator (5 columns) */}
+          {/* Mobile Simulator / GIF Preview (5 columns) */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="w-full max-w-[300px] bg-[#1f1d1a] rounded-[40px] p-3 border-4 border-[#eae5de] shadow-xl relative">
-              {/* Speaker notch */}
-              <div className="absolute top-4 left-1/2 -translate-x-1/2 w-28 h-3.5 bg-[#eae5de] rounded-full flex items-center justify-center">
-                <div className="w-2 h-2 rounded-full bg-[#1f1d1a]"></div>
-              </div>
-
-              {/* Phone Content Screen */}
-              <div className="bg-[#12131a] rounded-[32px] px-4 py-8 border border-white/5 font-mono text-[11px] text-[#dbd5cd]">
-                <div className="flex justify-between items-center text-[9px] text-[#80766b] mb-4 pt-1 border-b border-white/5 pb-2">
-                  <span>KENANGAN APP</span>
-                  <span>100% SIGNAL</span>
-                </div>
-
-                {/* User Stats Card */}
-                <div className="bg-[#1d1e28] border border-white/5 rounded-2xl p-4 mb-4">
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-[9px] text-[#dbd5cd]/60 uppercase">MEMBER TIER</span>
-                    <span className="text-[9px] font-bold px-2 py-0.5 rounded bg-black/40 border border-white/10 uppercase text-[#cfa869]">
-                      {tier}
-                    </span>
-                  </div>
-                  <div className="text-xl font-bold text-white tracking-tight mb-1">
-                    {points.toLocaleString("id-ID")} <span className="text-[10px] text-[#dbd5cd]/50">PTS</span>
-                  </div>
-                  <div className="w-full bg-[#12131a] h-1 rounded-full overflow-hidden mb-2">
-                    <div
-                      className="bg-[#c82a2b] h-full transition-all duration-500"
-                      style={{ width: `${(points / 6000) * 100}%` }}
-                    ></div>
-                  </div>
-                </div>
-
-                {/* Points Adder */}
-                <div className="mb-4">
-                  <button
-                    onClick={() => setPoints((prev) => Math.min(prev + 250, 6000))}
-                    className="w-full py-2 bg-[#c82a2b]/20 hover:bg-[#c82a2b]/30 text-[#cfa869] text-[9px] tracking-wider rounded border border-[#c82a2b]/40 transition-all font-bold"
-                  >
-                    + SIMULATE ORDER (+250 PTS)
-                  </button>
-                </div>
-
-                {/* Voucher Showcase */}
-                <div className="bg-[#1d1e28] border border-white/5 rounded-2xl p-4 space-y-2">
-                  <div className="flex items-center gap-2 text-white font-bold text-[10px]">
-                    <Gift className="w-3.5 h-3.5 text-[#c82a2b]" />
-                    <span>ACTIVE BENEFITS</span>
-                  </div>
-                  <div className="space-y-1.5 text-[9px] text-[#dbd5cd]/70">
-                    <div className="flex justify-between border-b border-white/5 pb-1">
-                      <span>Multiplier:</span>
-                      <span className="text-white">{selectedTier.multiplier}</span>
-                    </div>
-                    <div className="flex justify-between border-b border-white/5 pb-1">
-                      <span>Discount:</span>
-                      <span className="text-white">{selectedTier.discount}</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span>Voucher:</span>
-                      <span className="text-white text-right">{selectedTier.voucher}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Qr Code */}
-                <div className="mt-4 flex flex-col items-center justify-center bg-white p-2.5 rounded-xl">
-                  <QrCode className="w-16 h-16 text-black" />
-                  <span className="text-[8px] text-black font-bold tracking-widest mt-1">KENANGAN-PAY</span>
-                </div>
-              </div>
-            </div>
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1605250463718-RAWESAHFYEWXB7PXRP0B/hp-2.gif?format=500w"
+              alt="Kopi Kenangan App Preview"
+              className="w-full max-w-[280px] object-contain transition-transform duration-500 hover:scale-105"
+            />
           </div>
 
           {/* Copy and Tiers (7 columns) */}
           <div className="lg:col-span-7 space-y-8">
             <div>
               <h3 className="text-2xl sm:text-3xl font-bold font-sans tracking-tight text-[#1f1d1a] mb-4 uppercase">
-                TIER LOYALITAS <span className="text-[#c82a2b]">KENANGAN APP</span>
+                KOPI KENANGAN <span className="text-[#c82a2b]">APP</span>
               </h3>
               <p className="text-[#4a453f] font-sans text-xs sm:text-sm leading-relaxed mb-6">
                 Gunakan aplikasi Kopi Kenangan untuk memesan dengan fitur Pickup atau Delivery tanpa perlu mengantre. Kumpulkan Kenangan Points cashback di setiap transaksi.
@@ -140,9 +73,6 @@ export default function AppShowcase() {
                   key={t}
                   onClick={() => {
                     setTier(t);
-                    if (t === "BRONZE") setPoints(450);
-                    if (t === "GOLD") setPoints(2450);
-                    if (t === "LEGEND") setPoints(5450);
                   }}
                   className={`p-4 rounded-xl border text-left transition-all duration-300 font-mono ${
                     tier === t

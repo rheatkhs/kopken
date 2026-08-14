@@ -24,7 +24,7 @@ export default function Footer() {
         <a href="#hero" className="hover:text-[#1f1d1a] transition-colors">Overview</a>
         <a href="#story" className="hover:text-[#1f1d1a] transition-colors">Story</a>
         <a href="#catalog" className="hover:text-[#1f1d1a] transition-colors">Catalog</a>
-        <a href="#app" className="hover:text-[#1f1d1a] transition-colors">Loyalty</a>
+        <a href="#app" className="hover:text-[#1f1d1a] transition-colors">Kopi Kenangan App</a>
         <a href="#stores" className="hover:text-[#1f1d1a] transition-colors">Stores</a>
         <a href="#testimonials" className="hover:text-[#1f1d1a] transition-colors">Reviews</a>
       </nav>

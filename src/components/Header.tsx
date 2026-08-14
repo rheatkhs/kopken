@@ -52,7 +52,7 @@ export default function Header() {
           <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#c82a2b] opacity-0 group-hover:opacity-100 transition-opacity"></span>
         </a>
         <a href="#app" className="hover:text-[#1f1d1a] transition-colors py-2 relative group">
-          App & Loyalty
+          Kopi Kenangan App
           <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-[#c82a2b] opacity-0 group-hover:opacity-100 transition-opacity"></span>
         </a>
         <a href="#stores" className="hover:text-[#1f1d1a] transition-colors py-2 relative group">
@@ -89,7 +89,7 @@ export default function Header() {
           <a href="#hero" onClick={() => setIsOpen(false)}>Overview</a>
           <a href="#story" onClick={() => setIsOpen(false)}>Story</a>
           <a href="#catalog" onClick={() => setIsOpen(false)}>Catalog</a>
-          <a href="#app" onClick={() => setIsOpen(false)}>App & Loyalty</a>
+          <a href="#app" onClick={() => setIsOpen(false)}>Kopi Kenangan App</a>
           <a href="#stores" onClick={() => setIsOpen(false)}>Stores</a>
           <a href="#testimonials" onClick={() => setIsOpen(false)}>Reviews</a>
         </div>
