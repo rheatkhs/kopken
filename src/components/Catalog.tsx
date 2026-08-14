@@ -94,7 +94,7 @@ export default function Catalog({ limit }: { limit?: number }) {
       name: "Oatside Kopi Kenangan Mantan",
       japanese: "オーツサイド元カレ",
       category: "COFFEE",
-      desc: "Perpaduan kopi espresso mantap dengan susu Oatside oat milk yang creamy dan gula aren pilihan.",
+      desc: "Perpaduan kopi espresso mantap dengan susu Oatside oat milk yang creamy and gula aren pilihan.",
       price: { Regular: 25000, Large: 29000 },
       badge: "OATSIDE SERIES",
       notes: { sweetness: 4, intensity: 3, acidity: 1, caffeine: "Medium" },
@@ -107,7 +107,7 @@ export default function Catalog({ limit }: { limit?: number }) {
       category: "COFFEE",
       desc: "Espresso premium berpadu susu Oatside oat milk untuk tekstur kopi yang sangat lembut dan ringan.",
       price: { Regular: 27000, Large: 31000 },
-      badge: "HEALTHY CHICE",
+      badge: "HEALTHY CHOICE",
       notes: { sweetness: 2, intensity: 3, acidity: 1, caffeine: "Medium" },
       image: "https://kopikenangan.menu-kopi.id/img/oatside-latte.png",
     },
@@ -352,39 +352,42 @@ export default function Catalog({ limit }: { limit?: number }) {
   const displayedProducts = limit ? filteredProducts.slice(0, limit) : filteredProducts;
 
   return (
-    <section id="catalog" className="py-24 border-b border-[#c8c0b5] relative bg-[#fcfbfa]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#c8c0b5]">
-          <div>
-            <div className="text-[#c82a2b] font-mono text-[11px] font-bold tracking-widest uppercase mb-2">
-              03 // MENU CATALOGUE
-            </div>
+    <section
+      id="catalog"
+      className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#c8c0b5] overflow-hidden bg-[#f4f0eb] px-4 sm:px-8 py-16"
+    >
+      {/* Intro Sidebar (4 columns on LG) */}
+      <div className="lg:col-span-4 flex flex-col justify-between pr-6 pb-8 lg:pb-0">
+        <div className="space-y-4">
+          <p className="font-display text-xs font-mono uppercase tracking-widest text-[#c82a2b]">
+            03 // MENU CATALOGUE
+          </p>
+          <h2 className="text-3xl sm:text-4xl font-light font-display uppercase tracking-tight text-[#1f1d1a]">
             {limit ? (
-              <h2 className="text-3xl sm:text-5xl font-light font-display uppercase tracking-tight text-[#1f1d1a]">
+              <>
                 FEATURED <span className="text-[#c82a2b]">MENU</span>
-              </h2>
+              </>
             ) : (
-              <div className="space-y-1">
-                <a href="/" className="text-[10px] font-mono text-[#80766b] hover:text-[#c82a2b] transition-colors block mb-1">
-                  &lt; KEMBALI KE BERANDA
-                </a>
-                <h2 className="text-3xl sm:text-5xl font-light font-display uppercase tracking-tight text-[#1f1d1a]">
-                  SEMUA <span className="text-[#c82a2b]">MENU</span>
-                </h2>
-              </div>
+              <>
+                SEMUA <span className="text-[#c82a2b]">MENU</span>
+              </>
             )}
-          </div>
+          </h2>
+          <p className="text-xs text-[#80766b] font-serif leading-relaxed">
+            Jelajahi petualangan rasa dari biji kopi arabika robusta pilihan terbaik Indonesia, dipadukan gula aren murni dan bahan berkualitas tinggi.
+          </p>
+
+          {/* Category Filter Pills (stacked/vertical on desktop, horizontal on mobile) */}
           {!limit && (
-            <div className="flex flex-wrap gap-2 mt-6 md:mt-0">
+            <div className="flex flex-wrap lg:flex-col lg:items-start gap-2 pt-4">
               {categories.map((cat) => (
                 <button
                   key={cat}
                   onClick={() => setFilter(cat)}
-                  className={`px-4 py-2 text-[10px] font-mono rounded transition-all uppercase tracking-wider ${
+                  className={`px-4 py-2 text-[10px] font-mono rounded border transition-all uppercase tracking-wider cursor-pointer ${
                     filter === cat
-                      ? "bg-[#c82a2b] text-white font-bold"
-                      : "bg-[#eae5de] text-[#4a453f] border border-[#c8c0b5] hover:border-neutral-500 cursor-pointer"
+                      ? "bg-[#c82a2b] text-white font-bold border-[#c82a2b]"
+                      : "bg-[#eae5de] text-[#4a453f] border-[#c8c0b5] hover:border-neutral-500"
                   }`}
                 >
                   {cat}
@@ -394,222 +397,277 @@ export default function Catalog({ limit }: { limit?: number }) {
           )}
         </div>
 
-        {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {displayedProducts.map((p) => {
-            const size = sizeMap[p.id] || "Regular";
-            const price = p.price[size];
-
-            return (
-              <motion.article
-                key={p.id}
-                layout
-                initial={{ opacity: 0, y: 15 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="group flex flex-col justify-between"
-              >
-                <div>
-                  {/* Image Card Frame */}
-                  <div className="overflow-hidden rounded-lg border border-[#c8c0b5] bg-[#eae5de] mb-4 aspect-square relative group-hover:border-[#c82a2b] transition-colors">
-                    <img
-                      src={p.image}
-                      alt={p.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter saturate-[0.98] contrast-[1.03]"
-                      loading="lazy"
-                    />
-                    {p.badge && (
-                      <span className="absolute top-3 left-3 bg-[#c82a2b] text-white text-[9px] font-mono font-bold px-2 py-0.5 tracking-wider uppercase">
-                        {p.badge}
-                      </span>
-                    )}
-                  </div>
-
-                  {/* Meta Row */}
-                  <div className="flex justify-between items-center mb-1">
-                    <span className="text-[10px] font-mono text-[#c82a2b] tracking-wider uppercase font-bold">
-                      {p.category}
-                    </span>
-                    <span className="text-[10px] font-mono text-[#80766b]">{p.japanese}</span>
-                  </div>
-
-                  {/* Title */}
-                  <h3 className="text-base font-bold font-sans text-[#1f1d1a] group-hover:text-[#c82a2b] transition-colors leading-snug">
-                    {p.name}
-                  </h3>
-
-                  {/* Description */}
-                  <p className="text-xs text-[#80766b] font-serif leading-relaxed mt-2 mb-4 line-clamp-2">
-                    {p.desc}
-                  </p>
-                </div>
-
-                {/* Bottom Row Actions */}
-                <div className="pt-3 border-t border-[#c8c0b5]/50 flex items-center justify-between">
-                  <div>
-                    <span className="text-[9px] font-mono text-[#80766b] block">IDR / PRICE</span>
-                    <span className="text-base font-mono font-bold text-[#1f1d1a]">
-                      {price.toLocaleString("id-ID")}
-                    </span>
-                  </div>
-
-                  <div className="flex items-center gap-2">
-                    {p.category !== "BAKERY & FOOD" && (
-                      <div className="flex bg-[#eae5de] p-0.5 rounded border border-[#c8c0b5]">
-                        {(["Regular", "Large"] as const).map((sz) => (
-                          <button
-                            key={sz}
-                            onClick={(e) => {
-                              e.stopPropagation();
-                              setSizeMap((prev) => ({ ...prev, [p.id]: sz }));
-                            }}
-                            className={`text-[9px] font-mono py-1 px-2 transition-all uppercase rounded-sm cursor-pointer ${
-                              size === sz
-                                ? "bg-[#c82a2b] text-white font-bold"
-                                : "text-[#4a453f] hover:text-[#1f1d1a]"
-                            }`}
-                          >
-                            {sz.charAt(0)}
-                          </button>
-                        ))}
-                      </div>
-                    )}
-                    <button
-                      onClick={() => setSelectedProduct(p.id)}
-                      className="ticket-pill"
-                      style={{ minHeight: "32px", padding: "0.25rem 0.6rem" }}
-                    >
-                      <span>INFO</span>
-                    </button>
-                  </div>
-                </div>
-              </motion.article>
-            );
-          })}
-        </div>
-
         {/* View All Button for Homepage / Limit Mode */}
-        {limit && (
-          <div className="flex justify-center mt-16">
-            <a href="/catalog" className="ticket-pill">
-              <span>LIHAT SEMUA MENU / VIEW ALL</span>
-              <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
-                <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </a>
-          </div>
+        {limit ? (
+          <a href="/catalog" className="ticket-pill mt-8">
+            <span>VIEW ALL</span>
+            <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
+              <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+        ) : (
+          <a href="/" className="text-[10px] font-mono text-[#80766b] hover:text-[#c82a2b] transition-colors mt-8 block">
+            &lt; KEMBALI KE BERANDA
+          </a>
         )}
-
-        {/* Modal Info Detail with Framer Motion AnimatePresence */}
-        <AnimatePresence>
-          {selectedProduct && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
-            >
-              {/* Modal Body */}
-              {(() => {
-                const p = products.find((prod) => prod.id === selectedProduct)!;
-                return (
-                  <motion.div
-                    initial={{ scale: 0.95, opacity: 0 }}
-                    animate={{ scale: 1, opacity: 1 }}
-                    exit={{ scale: 0.95, opacity: 0 }}
-                    transition={{ type: "spring", duration: 0.5 }}
-                    className="bg-[#f4f0eb] border border-[#c8c0b5] rounded-lg max-w-lg w-full p-6 sm:p-8 relative overflow-hidden font-mono text-[#1f1d1a]"
-                  >
-                    {/* Decorative Header */}
-                    <div className="flex justify-between items-center pb-4 mb-6 border-b border-[#c8c0b5]">
-                      <div className="flex items-center gap-2">
-                        <Sparkles className="w-4 h-4 text-[#b38b4d]" />
-                        <span className="text-xs font-bold uppercase tracking-widest text-[#1f1d1a]">
-                          SPECIFICATION PANEL
-                        </span>
-                      </div>
-                      <button
-                        onClick={() => setSelectedProduct(null)}
-                        className="text-[#4a453f] hover:text-[#1f1d1a] text-xs bg-[#eae5de] border border-[#c8c0b5] px-3 py-1 rounded cursor-pointer"
-                      >
-                        [CLOSE]
-                      </button>
-                    </div>
-
-                    <h3 className="text-xl font-bold font-sans text-[#1f1d1a] mb-1">{p.name}</h3>
-                    <p className="text-xs text-[#c82a2b] mb-6">{p.japanese} // {p.category}</p>
-
-                    {/* Flavor Metrics */}
-                    <div className="space-y-4 mb-6">
-                      <div>
-                        <div className="flex justify-between text-xs mb-1">
-                          <span className="text-[#4a453f]">SWEETNESS</span>
-                          <span className="text-[#1f1d1a]">{"★".repeat(p.notes.sweetness)}{"☆".repeat(5 - p.notes.sweetness)}</span>
-                        </div>
-                        <div className="w-full bg-[#eae5de] h-1.5 rounded-full overflow-hidden">
-                          <div className="bg-[#c82a2b] h-full" style={{ width: `${p.notes.sweetness * 20}%` }}></div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div className="flex justify-between text-xs mb-1">
-                          <span className="text-[#4a453f]">INTENSITY</span>
-                          <span className="text-[#1f1d1a]">{"★".repeat(p.notes.intensity)}{"☆".repeat(5 - p.notes.intensity)}</span>
-                        </div>
-                        <div className="w-full bg-[#eae5de] h-1.5 rounded-full overflow-hidden">
-                          <div className="bg-[#c82a2b] h-full" style={{ width: `${p.notes.intensity * 20}%` }}></div>
-                        </div>
-                      </div>
-
-                      <div>
-                        <div className="flex justify-between text-xs mb-1">
-                          <span className="text-[#4a453f]">ACIDITY</span>
-                          <span className="text-[#1f1d1a]">{"★".repeat(p.notes.acidity)}{"☆".repeat(5 - p.notes.acidity)}</span>
-                        </div>
-                        <div className="w-full bg-[#eae5de] h-1.5 rounded-full overflow-hidden">
-                          <div className="bg-[#c82a2b] h-full" style={{ width: `${p.notes.acidity * 20}%` }}></div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Extra Info Panel */}
-                    <div className="bg-[#eae5de] p-4 rounded-lg border border-[#c8c0b5] text-xs space-y-2 mb-6">
-                      <div className="flex justify-between">
-                        <span className="text-[#4a453f]">Caffeine Profile:</span>
-                        <span className="text-[#c82a2b] font-bold">{p.notes.caffeine}</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-[#4a453f]">Optimal Temperature:</span>
-                        <span className="text-[#1f1d1a]">4.0°C (Chilled) / 65.0°C (Hot)</span>
-                      </div>
-                      <div className="flex justify-between">
-                        <span className="text-[#4a453f]">Roast Profile:</span>
-                        <span className="text-[#1f1d1a]">Medium-Dark Roast</span>
-                      </div>
-                    </div>
-
-                    {/* Modal CTA */}
-                    <div>
-                      <button
-                        onClick={() => {
-                          alert(`Pesanan ${p.name} simulasi ditambahkan! Unduh aplikasi Kopi Kenangan untuk memesan produk ini.`);
-                          setSelectedProduct(null);
-                        }}
-                        className="ticket-pill w-full justify-center"
-                      >
-                        <span>ORDER NOW</span>
-                        <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
-                          <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                        </svg>
-                      </button>
-                    </div>
-                  </motion.div>
-                );
-              })()}
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
+
+      {/* Product Grid (8 columns on LG) */}
+      <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+        {displayedProducts.map((p) => {
+          const size = sizeMap[p.id] || "Regular";
+          const price = p.price[size];
+
+          return (
+            <motion.article
+              key={p.id}
+              layout
+              initial={{ opacity: 0, y: 15 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+              className="group flex flex-col justify-between cursor-pointer"
+              onClick={() => setSelectedProduct(p.id)}
+            >
+              <div>
+                {/* Image Frame (Experiences/Installations style) */}
+                <div className="overflow-hidden rounded-lg border border-[#c8c0b5] bg-[#eae5de] mb-3 aspect-square relative group-hover:border-[#c82a2b] transition-colors">
+                  <img
+                    src={p.image}
+                    alt={p.name}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter saturate-[0.98] contrast-[1.03]"
+                    loading="lazy"
+                  />
+                  {p.badge && (
+                    <span className="absolute top-3 left-3 bg-[#c82a2b] text-white text-[8px] font-mono font-bold px-1.5 py-0.5 tracking-wider uppercase">
+                      {p.badge}
+                    </span>
+                  )}
+                </div>
+
+                {/* Meta Row */}
+                <div className="flex justify-between items-center text-[9px] font-mono text-[#80766b] mb-1">
+                  <span className="text-[#c82a2b] font-bold uppercase">{p.category}</span>
+                  <span>{p.japanese}</span>
+                </div>
+
+                {/* Title */}
+                <h3 className="text-sm font-bold font-sans text-[#1f1d1a] group-hover:text-[#c82a2b] transition-colors leading-tight mb-1">
+                  {p.name}
+                </h3>
+
+                {/* Description */}
+                <p className="text-xs text-[#80766b] font-serif leading-relaxed mb-3 line-clamp-2">
+                  {p.desc}
+                </p>
+              </div>
+
+              {/* Bottom Actions */}
+              <div className="pt-2.5 border-t border-[#c8c0b5]/50 flex items-center justify-between">
+                <div>
+                  <span className="text-[8px] font-mono text-[#80766b] block">IDR / PRICE</span>
+                  <span className="text-xs font-mono font-bold text-[#1f1d1a]">
+                    {price.toLocaleString("id-ID")}
+                  </span>
+                </div>
+
+                <div className="flex items-center gap-1.5" onClick={(e) => e.stopPropagation()}>
+                  {p.category !== "BAKERY & FOOD" && (
+                    <div className="flex bg-[#eae5de] p-0.5 rounded border border-[#c8c0b5]">
+                      {(["Regular", "Large"] as const).map((sz) => (
+                        <button
+                          key={sz}
+                          onClick={() => setSizeMap((prev) => ({ ...prev, [p.id]: sz }))}
+                          className={`text-[8px] font-mono py-0.5 px-1.5 transition-all uppercase rounded-sm cursor-pointer ${
+                            size === sz
+                              ? "bg-[#c82a2b] text-white font-bold"
+                              : "text-[#4a453f] hover:text-[#1f1d1a]"
+                          }`}
+                        >
+                          {sz.charAt(0)}
+                        </button>
+                      ))}
+                    </div>
+                  )}
+                  <button
+                    onClick={() => setSelectedProduct(p.id)}
+                    className="ticket-pill"
+                    style={{ minHeight: "26px", padding: "0.15rem 0.45rem", fontSize: "9px" }}
+                  >
+                    <span>INFO</span>
+                  </button>
+                </div>
+              </div>
+            </motion.article>
+          );
+        })}
+      </div>
+
+      {/* Modal Info Detail with Framer Motion AnimatePresence */}
+      <AnimatePresence>
+        {selectedProduct && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm"
+            onClick={() => setSelectedProduct(null)}
+          >
+            {/* Modal Body */}
+            {(() => {
+              const p = products.find((prod) => prod.id === selectedProduct)!;
+              return (
+                <motion.div
+                  initial={{ scale: 0.95, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.95, opacity: 0 }}
+                  transition={{ type: "spring", duration: 0.5 }}
+                  className="bg-[#f4f0eb] border border-[#c8c0b5] rounded-lg max-w-2xl w-full relative overflow-hidden font-mono text-[#1f1d1a] shadow-xl"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-12 divide-y md:divide-y-0 md:divide-x divide-[#c8c0b5]">
+                    {/* Left: Product Image Panel */}
+                    <div className="md:col-span-5 relative bg-[#eae5de] min-h-[220px] md:min-h-full">
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        className="absolute inset-0 w-full h-full object-cover filter saturate-[0.98] contrast-[1.03]"
+                      />
+                      {p.badge && (
+                        <span className="absolute top-4 left-4 bg-[#c82a2b] text-white text-[8px] font-mono font-bold px-1.5 py-0.5 tracking-wider uppercase">
+                          {p.badge}
+                        </span>
+                      )}
+                    </div>
+
+                    {/* Right: Spec details */}
+                    <div className="md:col-span-7 p-6 sm:p-8 flex flex-col justify-between">
+                      <div>
+                        {/* Decorative Header */}
+                        <div className="flex justify-between items-center pb-3 mb-4 border-b border-[#c8c0b5]/60">
+                          <div className="flex items-center gap-2">
+                            <Sparkles className="w-3.5 h-3.5 text-[#b38b4d]" />
+                            <span className="text-[10px] font-bold uppercase tracking-widest text-[#1f1d1a]">
+                              SPECIFICATION PANEL
+                            </span>
+                          </div>
+                          <button
+                            onClick={() => setSelectedProduct(null)}
+                            className="text-[#4a453f] hover:text-[#1f1d1a] text-[9px] bg-[#eae5de] border border-[#c8c0b5] px-2 py-0.5 rounded cursor-pointer"
+                          >
+                            [CLOSE]
+                          </button>
+                        </div>
+
+                        <h3 className="text-lg font-bold font-sans text-[#1f1d1a] leading-tight mb-1">
+                          {p.name}
+                        </h3>
+                        <p className="text-xs text-[#c82a2b] font-semibold mb-4">
+                          {p.japanese} // {p.category}
+                        </p>
+
+                        <p className="text-xs text-[#80766b] font-serif leading-relaxed mb-6">
+                          {p.desc}
+                        </p>
+
+                        {/* Flavor Metrics */}
+                        <div className="space-y-3 mb-6">
+                          <div>
+                            <div className="flex justify-between text-[10px] mb-1">
+                              <span className="text-[#4a453f]">SWEETNESS</span>
+                              <span className="text-[#1f1d1a]">
+                                {"★".repeat(p.notes.sweetness)}
+                                {"☆".repeat(5 - p.notes.sweetness)}
+                              </span>
+                            </div>
+                            <div className="w-full bg-[#eae5de] h-1 rounded-full overflow-hidden">
+                              <div
+                                className="bg-[#c82a2b] h-full"
+                                style={{ width: `${p.notes.sweetness * 20}%` }}
+                              ></div>
+                            </div>
+                          </div>
+
+                          <div>
+                            <div className="flex justify-between text-[10px] mb-1">
+                              <span className="text-[#4a453f]">INTENSITY</span>
+                              <span className="text-[#1f1d1a]">
+                                {"★".repeat(p.notes.intensity)}
+                                {"☆".repeat(5 - p.notes.intensity)}
+                              </span>
+                            </div>
+                            <div className="w-full bg-[#eae5de] h-1 rounded-full overflow-hidden">
+                              <div
+                                className="bg-[#c82a2b] h-full"
+                                style={{ width: `${p.notes.intensity * 20}%` }}
+                              ></div>
+                            </div>
+                          </div>
+
+                          <div>
+                            <div className="flex justify-between text-[10px] mb-1">
+                              <span className="text-[#4a453f]">ACIDITY</span>
+                              <span className="text-[#1f1d1a]">
+                                {"★".repeat(p.notes.acidity)}
+                                {"☆".repeat(5 - p.notes.acidity)}
+                              </span>
+                            </div>
+                            <div className="w-full bg-[#eae5de] h-1 rounded-full overflow-hidden">
+                              <div
+                                className="bg-[#c82a2b] h-full"
+                                style={{ width: `${p.notes.acidity * 20}%` }}
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Extra Info Panel */}
+                        <div className="bg-[#eae5de] p-3 rounded border border-[#c8c0b5]/60 text-[10px] space-y-1.5 mb-6">
+                          <div className="flex justify-between">
+                            <span className="text-[#4a453f]">Caffeine:</span>
+                            <span className="text-[#c82a2b] font-bold">{p.notes.caffeine}</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-[#4a453f]">Roast Profile:</span>
+                            <span className="text-[#1f1d1a]">Medium-Dark Roast</span>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Modal CTA */}
+                      <div>
+                        <button
+                          onClick={() => {
+                            alert(
+                              `Pesanan ${p.name} simulasi ditambahkan! Unduh aplikasi Kopi Kenangan untuk memesan produk ini.`
+                            );
+                            setSelectedProduct(null);
+                          }}
+                          className="ticket-pill w-full justify-center"
+                        >
+                          <span>ORDER NOW</span>
+                          <svg
+                            className="w-5 h-5 p-1 border border-current rounded-full"
+                            viewBox="0 0 24 24"
+                          >
+                            <path
+                              d="M5 12h12m-5-5 5 5-5 5"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="1.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            />
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </motion.div>
+              );
+            })()}
+          </motion.div>
+        )}
+      </AnimatePresence>
     </section>
   );
 }
