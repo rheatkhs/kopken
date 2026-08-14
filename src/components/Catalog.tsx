@@ -356,8 +356,8 @@ export default function Catalog({ limit }: { limit?: number }) {
       id="catalog"
       className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#c8c0b5] overflow-hidden bg-[#f4f0eb] px-4 sm:px-8 py-16"
     >
-      {/* Intro Sidebar (4 columns on LG) */}
-      <div className="lg:col-span-4 flex flex-col justify-between pr-6 pb-8 lg:pb-0">
+      {/* Intro Sidebar (4 columns on LG, placed on the right) */}
+      <div className="lg:col-span-4 lg:order-last flex flex-col justify-between lg:pl-6 pb-8 lg:pb-0">
         <div className="space-y-4">
           <p className="font-display text-xs font-mono uppercase tracking-widest text-[#c82a2b]">
             03 // MENU CATALOGUE
@@ -412,8 +412,8 @@ export default function Catalog({ limit }: { limit?: number }) {
         )}
       </div>
 
-      {/* Product Grid (8 columns on LG) */}
-      <div className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
+      {/* Product Grid (8 columns on LG, placed on the left) */}
+      <div className="lg:col-span-8 lg:order-first grid grid-cols-1 sm:grid-cols-3 gap-6">
         {displayedProducts.map((p) => {
           const size = sizeMap[p.id] || "Regular";
           const price = p.price[size];
