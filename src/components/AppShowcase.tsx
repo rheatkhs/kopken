@@ -111,18 +111,33 @@ export default function AppShowcase() {
 
             {/* App Badges */}
             <div className="flex flex-wrap gap-4 items-center font-mono text-xs text-[#80766b]">
-              <span>DOWNLOAD NOW:</span>
-              <a
-                href="https://kopikenangan.onelink.me/4u50/tabak"
-                target="_blank"
-                rel="noreferrer"
-                className="ticket-pill"
-              >
-                <span>KENANGAN APP (APP STORE & GOOGLE PLAY)</span>
-                <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
-                  <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </a>
+              <span className="font-bold">DOWNLOAD NOW:</span>
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href="https://play.google.com/store/apps/details?gl=US&hl=en&id=com.kopikenangan"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-85 transition-opacity"
+                >
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1611739412718-FB769K21E5S37C17MOMX/app-donlod-01.png"
+                    alt="Google Play Store"
+                    className="h-10 object-contain"
+                  />
+                </a>
+                <a
+                  href="https://apps.apple.com/id/app/kopi-kenangan/id1458086649"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:opacity-85 transition-opacity"
+                >
+                  <img
+                    src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1611739426194-A3PTF4R4K1Z2PP0JYOQ6/app-donlod-02.png"
+                    alt="Apple App Store"
+                    className="h-10 object-contain"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>
