@@ -1,9 +1,14 @@
 "use client";
 
+import { ReactLenis, useLenis } from "lenis/react";
 import { useEffect } from "react";
 
-export default function SmoothScroll() {
+function SmoothScrollHandler() {
+  const lenis = useLenis();
+
   useEffect(() => {
+    if (!lenis) return;
+
     const handleAnchorClick = (e: MouseEvent) => {
       const target = (e.target as HTMLElement).closest("a");
       if (!target) return;
@@ -13,15 +18,12 @@ export default function SmoothScroll() {
         e.preventDefault();
 
         if (href === "#") {
-          window.scrollTo({
-            top: 0,
-            behavior: "smooth",
-          });
+          lenis.scrollTo(0);
         } else {
           const element = document.getElementById(href.slice(1));
           if (element) {
-            element.scrollIntoView({
-              behavior: "smooth",
+            lenis.scrollTo(element, {
+              offset: -74,
             });
           }
         }
@@ -32,7 +34,15 @@ export default function SmoothScroll() {
     return () => {
       document.removeEventListener("click", handleAnchorClick);
     };
-  }, []);
+  }, [lenis]);
 
   return null;
+}
+
+export default function SmoothScroll() {
+  return (
+    <ReactLenis root>
+      <SmoothScrollHandler />
+    </ReactLenis>
+  );
 }
