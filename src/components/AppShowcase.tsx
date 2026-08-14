@@ -80,7 +80,7 @@ export default function AppShowcase() {
             <img
               src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1611739412718-FB769K21E5S37C17MOMX/app-donlod-01.png"
               alt="Google Play Store"
-              className="h-[46px] object-contain"
+              className="h-[54px] object-contain"
             />
           </a>
           <a
@@ -92,7 +92,7 @@ export default function AppShowcase() {
             <img
               src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1611739426194-A3PTF4R4K1Z2PP0JYOQ6/app-donlod-02.png"
               alt="Apple App Store"
-              className="h-[46px] object-contain"
+              className="h-[54px] object-contain"
             />
           </a>
         </div>
