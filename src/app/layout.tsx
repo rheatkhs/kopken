@@ -3,8 +3,9 @@ import "./globals.css";
 import SmoothScroll from "@/components/SmoothScroll";
 
 export const metadata: Metadata = {
-  title: "KOPI KENANGAN — Coffee Memories // High Quality Local Coffee",
-  description: "At Kopi Kenangan, our dream is to serve high quality coffee, made with the freshest local ingredients to customers across Indonesia and the rest of the world.",
+  title: "Kopi Kenangan",
+  description:
+    "At Kopi Kenangan, our dream is to serve high quality coffee, made with the freshest local ingredients to customers across Indonesia and the rest of the world.",
 };
 
 export default function RootLayout({

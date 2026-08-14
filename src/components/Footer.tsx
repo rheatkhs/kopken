@@ -8,7 +8,7 @@ export default function Footer() {
         <img
           src="/favicon.ico"
           alt="Kopi Kenangan Logo"
-          className="w-9 h-9 rounded-full border border-[#c8c0b5]"
+          className="w-9 h-9"
         />
         <div className="grid gap-0.5 font-mono text-[10px] leading-none tracking-wider text-[#1f1d1a] font-bold uppercase">
           <span>KOPI</span>
