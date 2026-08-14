@@ -1,23 +1,20 @@
 "use client";
 
-import { useState } from "react";
-import { Sparkles } from "lucide-react";
-
 export default function AppShowcase() {
-  const steps = [
+  const features = [
     {
-      step: "Step 01",
+      code: "01 // CONVENIENCE",
       title: "ORDER & SKIP THE QUEUE",
-      desc: "Use the Kopi Kenangan app to order, you may select pickup or delivery to skip the queue",
+      desc: "Use the Kopi Kenangan app to order, you may select pickup or delivery to skip the queue.",
     },
     {
-      step: "Step 02",
+      code: "02 // LOYALTY",
       title: "COLLECT CASHBACK POINTS",
       desc: "Collect Kenangan Points cashback through in-app ordering OR scan the QR code at the cashier.",
     },
     {
-      step: "Step 03",
-      title: "ENJOY EXCLUSIVE MEMBERSHIP DEALS",
+      code: "03 // MEMBERSHIP",
+      title: "EXCLUSIVE DEALS & BENEFIT",
       desc: "Enjoy exclusive membership deals like free vouchers, birthday drinks, priority access to new products and more!",
     },
   ];
@@ -25,38 +22,51 @@ export default function AppShowcase() {
   return (
     <section
       id="app"
-      className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#c8c0b5] overflow-hidden lg:h-[clamp(23.1rem,43vw,38.7rem)] bg-[#12131a]"
+      className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#c8c0b5] overflow-hidden lg:h-[clamp(23.1rem,43vw,38.7rem)]"
     >
-      {/* Left Panel: Info & Steps (5 columns on LG) */}
+      {/* Left Panel: GIF Phone Preview (7 columns on LG) */}
+      <div className="lg:col-span-7 relative m-0 p-6 lg:p-0 min-h-[350px] lg:min-h-full bg-[#eae5de] overflow-hidden flex items-center justify-center border-r border-[#c8c0b5]/50">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1605250463718-RAWESAHFYEWXB7PXRP0B/hp-2.gif?format=500w"
+          alt="Kopi Kenangan App Preview"
+          className="h-[85%] max-h-[420px] object-contain transition-transform duration-500 hover:scale-105 drop-shadow-lg z-10"
+        />
+        <figcaption
+          className="absolute left-8 top-12 text-[#4a453f] font-mono text-[9px] tracking-widest font-bold uppercase hidden md:block"
+          style={{ writingMode: "vertical-rl" }}
+        >
+          Extra convenience. Extra benefits. Only in Kenangan app.
+        </figcaption>
+      </div>
+
+      {/* Right Panel: Info & Features (5 columns on LG) */}
       <div className="lg:col-span-5 bg-[#12131a] text-[#fcfbfa] p-[clamp(1.5rem,2.5vw,2.5rem)] relative overflow-hidden flex flex-col justify-between h-full">
-        <div className="relative z-10 space-y-6">
+        <div className="relative z-10 space-y-8">
           <div>
             <p className="font-display text-[clamp(1.8rem,3vw,2.4rem)] font-light leading-none uppercase text-[#fcfbfa] mb-2">
               Kopi Kenangan App
             </p>
-            <h2 className="text-[10px] font-mono text-[#cfa869] font-bold tracking-widest uppercase">
+            <h2 className="text-[10px] font-mono text-[#cfa869] font-bold tracking-widest uppercase leading-relaxed">
               Find out how to get free vouchers, priority access and extra benefits.
             </h2>
           </div>
 
-          {/* Steps list matching BrandStory styling */}
-          <ol className="space-y-5 font-mono border-l border-[#cfa869]/40 pl-4 py-1">
-            {steps.map((s, idx) => (
-              <li key={idx} className="relative group">
-                <div className="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full border border-[#cfa869] bg-[#12131a] group-hover:bg-[#c82a2b] transition-colors"></div>
-
-                <div className="text-[9px] text-[#c82a2b] font-bold uppercase mb-1">
-                  {s.step}
-                </div>
-                <h3 className="text-xs font-bold text-[#cfa869] font-sans mb-1 uppercase tracking-wide">
-                  {s.title}
+          {/* Features list (Clean style without steps/timeline line) */}
+          <div className="space-y-6">
+            {features.map((f, idx) => (
+              <div key={idx} className="space-y-1">
+                <span className="text-[9px] font-mono text-[#cfa869] tracking-wider uppercase font-bold block">
+                  {f.code}
+                </span>
+                <h3 className="text-xs font-bold text-[#fcfbfa] font-sans uppercase tracking-wide">
+                  {f.title}
                 </h3>
-                <p className="text-[10px] text-[#dbd5cd]/80 font-sans leading-relaxed">
-                  {s.desc}
+                <p className="text-[10.5px] text-[#dbd5cd]/80 font-sans leading-relaxed">
+                  {f.desc}
                 </p>
-              </li>
+              </div>
             ))}
-          </ol>
+          </div>
         </div>
 
         {/* Download Badges at bottom */}
@@ -86,21 +96,6 @@ export default function AppShowcase() {
             />
           </a>
         </div>
-      </div>
-
-      {/* Right Panel: GIF Phone Preview (7 columns on LG) */}
-      <div className="lg:col-span-7 relative m-0 p-6 lg:p-0 min-h-[350px] lg:min-h-full bg-[#eae5de] overflow-hidden flex items-center justify-center">
-        <img
-          src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1605250463718-RAWESAHFYEWXB7PXRP0B/hp-2.gif?format=500w"
-          alt="Kopi Kenangan App Preview"
-          className="h-[85%] max-h-[420px] object-contain transition-transform duration-500 hover:scale-105 drop-shadow-md z-10"
-        />
-        <figcaption
-          className="absolute right-8 top-12 text-[#4a453f] font-mono text-[9px] tracking-widest font-bold uppercase hidden md:block"
-          style={{ writingMode: "vertical-rl" }}
-        >
-          Extra convenience. Extra benefits. Only in Kenangan app.
-        </figcaption>
       </div>
     </section>
   );
