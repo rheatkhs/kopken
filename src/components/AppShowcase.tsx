@@ -1,146 +1,106 @@
 "use client";
 
 import { useState } from "react";
-import { Gift, Award } from "lucide-react";
+import { Sparkles } from "lucide-react";
 
 export default function AppShowcase() {
-  const [tier, setTier] = useState<"BRONZE" | "GOLD" | "LEGEND">("GOLD");
-
-  const tiers = {
-    BRONZE: {
-      multiplier: "1.0x Points",
-      discount: "5% Welcome Discount",
-      voucher: "Free Regular Cup on Sign Up",
+  const steps = [
+    {
+      step: "Step 01",
+      title: "ORDER & SKIP THE QUEUE",
+      desc: "Use the Kopi Kenangan app to order, you may select pickup or delivery to skip the queue",
     },
-    GOLD: {
-      multiplier: "1.5x Points",
-      discount: "10% Everyday Discount",
-      voucher: "2x Free Large Cup / Month",
+    {
+      step: "Step 02",
+      title: "COLLECT CASHBACK POINTS",
+      desc: "Collect Kenangan Points cashback through in-app ordering OR scan the QR code at the cashier.",
     },
-    LEGEND: {
-      multiplier: "2.0x Points",
-      discount: "15% Everyday Discount + Priority Queue",
-      voucher: "Unlimited Free Customization + Birthday Drink",
+    {
+      step: "Step 03",
+      title: "ENJOY EXCLUSIVE MEMBERSHIP DEALS",
+      desc: "Enjoy exclusive membership deals like free vouchers, birthday drinks, priority access to new products and more!",
     },
-  };
-
-  const selectedTier = tiers[tier];
+  ];
 
   return (
-    <section id="app" className="py-24 border-b border-[#c8c0b5] relative overflow-hidden bg-[#eae5de]/40">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10">
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#c8c0b5]">
+    <section
+      id="app"
+      className="grid grid-cols-1 lg:grid-cols-12 border-b border-[#c8c0b5] overflow-hidden lg:h-[clamp(23.1rem,43vw,38.7rem)] bg-[#12131a]"
+    >
+      {/* Left Panel: Info & Steps (5 columns on LG) */}
+      <div className="lg:col-span-5 bg-[#12131a] text-[#fcfbfa] p-[clamp(1.5rem,2.5vw,2.5rem)] relative overflow-hidden flex flex-col justify-between h-full">
+        <div className="relative z-10 space-y-6">
           <div>
-            <div className="text-[#c82a2b] font-mono text-[11px] font-bold tracking-widest uppercase mb-2">
-              04 // KOPI KENANGAN APP
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-light font-display uppercase tracking-tight text-[#1f1d1a]">
-              KOPI KENANGAN <span className="text-[#c82a2b]">APP</span>
+            <p className="font-display text-[clamp(1.8rem,3vw,2.4rem)] font-light leading-none uppercase text-[#fcfbfa] mb-2">
+              Kopi Kenangan App
+            </p>
+            <h2 className="text-[10px] font-mono text-[#cfa869] font-bold tracking-widest uppercase">
+              Find out how to get free vouchers, priority access and extra benefits.
             </h2>
           </div>
-          <p className="text-[#4a453f] font-sans text-xs max-w-sm mt-4 md:mt-0 leading-relaxed font-bold">
-            Extra convenience. Extra benefits. Only in Kenangan app.
-          </p>
+
+          {/* Steps list matching BrandStory styling */}
+          <ol className="space-y-5 font-mono border-l border-[#cfa869]/40 pl-4 py-1">
+            {steps.map((s, idx) => (
+              <li key={idx} className="relative group">
+                <div className="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full border border-[#cfa869] bg-[#12131a] group-hover:bg-[#c82a2b] transition-colors"></div>
+
+                <div className="text-[9px] text-[#c82a2b] font-bold uppercase mb-1">
+                  {s.step}
+                </div>
+                <h3 className="text-xs font-bold text-[#cfa869] font-sans mb-1 uppercase tracking-wide">
+                  {s.title}
+                </h3>
+                <p className="text-[10px] text-[#dbd5cd]/80 font-sans leading-relaxed">
+                  {s.desc}
+                </p>
+              </li>
+            ))}
+          </ol>
         </div>
 
-        {/* Display Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Mobile Simulator / GIF Preview (5 columns) */}
-          <div className="lg:col-span-5 flex justify-center">
+        {/* Download Badges at bottom */}
+        <div className="relative z-10 pt-6 border-t border-[#cfa869]/20 flex flex-wrap items-center gap-3">
+          <a
+            href="https://play.google.com/store/apps/details?gl=US&hl=en&id=com.kopikenangan"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-85 transition-opacity"
+          >
             <img
-              src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1605250463718-RAWESAHFYEWXB7PXRP0B/hp-2.gif?format=500w"
-              alt="Kopi Kenangan App Preview"
-              className="w-full max-w-[280px] object-contain transition-transform duration-500 hover:scale-105"
+              src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1611739412718-FB769K21E5S37C17MOMX/app-donlod-01.png"
+              alt="Google Play Store"
+              className="h-9 object-contain"
             />
-          </div>
-
-          {/* Copy and Tiers (7 columns) */}
-          <div className="lg:col-span-7 space-y-8">
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-bold font-sans tracking-tight text-[#1f1d1a] mb-4 uppercase">
-                KOPI KENANGAN <span className="text-[#c82a2b]">APP</span>
-              </h3>
-              <p className="text-[#4a453f] font-sans text-xs sm:text-sm leading-relaxed mb-6">
-                Gunakan aplikasi Kopi Kenangan untuk memesan dengan fitur Pickup atau Delivery tanpa perlu mengantre. Kumpulkan Kenangan Points cashback di setiap transaksi.
-              </p>
-            </div>
-
-            {/* Tier Select Buttons */}
-            <div className="grid grid-cols-3 gap-4">
-              {(["BRONZE", "GOLD", "LEGEND"] as const).map((t) => (
-                <button
-                  key={t}
-                  onClick={() => {
-                    setTier(t);
-                  }}
-                  className={`p-4 rounded-xl border text-left transition-all duration-300 font-mono ${
-                    tier === t
-                      ? "bg-[#eae5de] border-[#c82a2b] text-[#1f1d1a]"
-                      : "bg-[#f4f0eb]/80 border-[#c8c0b5] text-[#4a453f] hover:border-neutral-500"
-                  }`}
-                >
-                  <span className="text-[10px] text-[#c82a2b] block mb-1">0{t === "BRONZE" ? 1 : t === "GOLD" ? 2 : 3}</span>
-                  <span className="font-bold text-xs block text-[#1f1d1a]">{t}</span>
-                </button>
-              ))}
-            </div>
-
-            {/* Detailed Perks */}
-            <div className="bg-[#eae5de] border border-[#c8c0b5] rounded-2xl p-6 space-y-4">
-              <div className="flex items-center gap-2 text-[#1f1d1a] font-mono text-xs font-bold tracking-widest uppercase">
-                <Award className="w-4 h-4 text-[#b38b4d]" />
-                <span>BENEFITS SPECIFICATIONS ({tier})</span>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-mono text-[#4a453f]">
-                <div className="bg-[#f4f0eb] p-4 rounded-lg border border-[#c8c0b5]/50">
-                  <span className="text-[#80766b] block mb-1">CASHBACK & POINT RATIO:</span>
-                  <span className="text-[#1f1d1a] font-bold">{selectedTier.multiplier} on all orders</span>
-                </div>
-                <div className="bg-[#f4f0eb] p-4 rounded-lg border border-[#c8c0b5]/50">
-                  <span className="text-[#80766b] block mb-1">TIER DISCOUNT:</span>
-                  <span className="text-[#1f1d1a] font-bold">{selectedTier.discount}</span>
-                </div>
-                <div className="bg-[#f4f0eb] p-4 rounded-lg border border-[#c8c0b5]/50 col-span-1 sm:col-span-2">
-                  <span className="text-[#80766b] block mb-1">SPECIAL REWARDS:</span>
-                  <span className="text-[#1f1d1a] font-bold">{selectedTier.voucher}</span>
-                </div>
-              </div>
-            </div>
-
-            {/* App Badges */}
-            <div className="flex flex-wrap gap-4 items-center font-mono text-xs text-[#80766b]">
-              <span className="font-bold">DOWNLOAD NOW:</span>
-              <div className="flex flex-wrap items-center gap-3">
-                <a
-                  href="https://play.google.com/store/apps/details?gl=US&hl=en&id=com.kopikenangan"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-85 transition-opacity"
-                >
-                  <img
-                    src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1611739412718-FB769K21E5S37C17MOMX/app-donlod-01.png"
-                    alt="Google Play Store"
-                    className="h-10 object-contain"
-                  />
-                </a>
-                <a
-                  href="https://apps.apple.com/id/app/kopi-kenangan/id1458086649"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:opacity-85 transition-opacity"
-                >
-                  <img
-                    src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1611739426194-A3PTF4R4K1Z2PP0JYOQ6/app-donlod-02.png"
-                    alt="Apple App Store"
-                    className="h-10 object-contain"
-                  />
-                </a>
-              </div>
-            </div>
-          </div>
+          </a>
+          <a
+            href="https://apps.apple.com/id/app/kopi-kenangan/id1458086649"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:opacity-85 transition-opacity"
+          >
+            <img
+              src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1611739426194-A3PTF4R4K1Z2PP0JYOQ6/app-donlod-02.png"
+              alt="Apple App Store"
+              className="h-9 object-contain"
+            />
+          </a>
         </div>
+      </div>
+
+      {/* Right Panel: GIF Phone Preview (7 columns on LG) */}
+      <div className="lg:col-span-7 relative m-0 p-6 lg:p-0 min-h-[350px] lg:min-h-full bg-[#eae5de] overflow-hidden flex items-center justify-center">
+        <img
+          src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1605250463718-RAWESAHFYEWXB7PXRP0B/hp-2.gif?format=500w"
+          alt="Kopi Kenangan App Preview"
+          className="h-[85%] max-h-[420px] object-contain transition-transform duration-500 hover:scale-105 drop-shadow-md z-10"
+        />
+        <figcaption
+          className="absolute right-8 top-12 text-[#4a453f] font-mono text-[9px] tracking-widest font-bold uppercase hidden md:block"
+          style={{ writingMode: "vertical-rl" }}
+        >
+          Extra convenience. Extra benefits. Only in Kenangan app.
+        </figcaption>
       </div>
     </section>
   );
