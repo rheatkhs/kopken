@@ -9,74 +9,195 @@ export default function Catalog() {
   const [selectedProduct, setSelectedProduct] = useState<number | null>(null);
   const [sizeMap, setSizeMap] = useState<Record<number, "Regular" | "Large">>({});
 
-  const categories = ["ALL", "CLASSICS", "OATSIDE", "COLD BREW", "NON-COFFEE"];
+  const categories = ["ALL", "COFFEE", "NON-COFFEE", "BAKERY"];
 
   const products = [
     {
       id: 1,
       name: "KOPI KENANGAN MANTAN",
-      japanese: "元カレ의思い出",
-      category: "CLASSICS",
+      japanese: "元カレの思い出",
+      category: "COFFEE",
       desc: "Kopi susu legendaris dengan gula aren murni pilihan. Cita rasa manis lembut berpadu sempurna dengan kehangatan kopi arabika robusta pilihan.",
-      price: { Regular: 18000, Large: 22000 },
+      price: { Regular: 22000, Large: 26000 },
       badge: "BEST SELLER",
       notes: { sweetness: 4, intensity: 3, acidity: 1, caffeine: "Medium" },
-      color: "from-amber-800 to-amber-950",
+      image: "https://i.postimg.cc/90RKhyxX/image.png",
     },
     {
       id: 2,
-      name: "AVOCADO COFFEE OATSIDE",
-      japanese: "アボカドオーツ",
-      category: "OATSIDE",
-      desc: "Perpaduan premium alpukat mentega segar dengan espresso ganda dan susu Oatside oatmilk premium. Creamy, sehat, bertenaga.",
-      price: { Regular: 28000, Large: 32000 },
-      badge: "HEALTHY PICK",
-      notes: { sweetness: 3, intensity: 2, acidity: 1, caffeine: "High" },
-      color: "from-emerald-800 to-emerald-950",
+      name: "CREAMY AREN LATTE",
+      japanese: "クリーミーアレン",
+      category: "COFFEE",
+      desc: "Es kopi susu dengan cita rasa lebih creamy dan lembut, pas untuk menemani petualangan harimu.",
+      price: { Regular: 24000, Large: 28000 },
+      badge: "CREAMY FAV",
+      notes: { sweetness: 4, intensity: 2, acidity: 1, caffeine: "Medium" },
+      image: "https://i.postimg.cc/vTTM613C/image.png",
     },
     {
       id: 3,
-      name: "SALTED CARAMEL MACCHIATO",
-      japanese: "塩キャラメル",
-      category: "CLASSICS",
-      desc: "Susu hangat berpadu sirup karamel gurih asin pilihan, dibubuhi espresso kental dan saus karamel di atasnya.",
-      price: { Regular: 24000, Large: 28000 },
-      badge: "NEW RECIPE",
+      name: "CARAMEL MACCHIATO",
+      japanese: "キャラメルマキアート",
+      category: "COFFEE",
+      desc: "Paduan espresso dengan susu segar dan sirup karamel gurih manis. Cita rasa mewah di setiap tegukan.",
+      price: { Regular: 30000, Large: 34000 },
+      badge: "PREMIUM SELECTION",
       notes: { sweetness: 5, intensity: 3, acidity: 2, caffeine: "Medium" },
-      color: "from-yellow-800 to-yellow-950",
+      image: "https://i.postimg.cc/cJ7sqGvk/image.png",
     },
     {
       id: 4,
-      name: "NITRO COLD BREW TORAJA",
-      japanese: "窒素コールドブリュー",
-      category: "COLD BREW",
-      desc: "Kopi Toraja pilihan yang diekstraksi dingin selama 16 jam, dialiri gas nitrogen untuk menghasilkan tekstur selembut sutra dengan busa tebal alami.",
-      price: { Regular: 29000, Large: 34000 },
-      badge: "NITRO CHARGED",
-      notes: { sweetness: 1, intensity: 5, acidity: 3, caffeine: "Extra High" },
-      color: "from-neutral-800 to-neutral-950",
+      name: "CARAMEL LATTE",
+      japanese: "キャラメルラテ",
+      category: "COFFEE",
+      desc: "Espresso premium berpadu susu segar dan saus karamel lezat yang disajikan dingin menyegarkan.",
+      price: { Regular: 28000, Large: 32000 },
+      badge: "SWEET SPOT",
+      notes: { sweetness: 4, intensity: 3, acidity: 1, caffeine: "Medium" },
+      image: "https://i.postimg.cc/nz8Q2J6d/image.png",
     },
     {
       id: 5,
-      name: "MATCHA LATTE PREMIUM",
-      japanese: "抹茶ラテ",
-      category: "NON-COFFEE",
-      desc: "Matcha asli Uji Kyoto dipadukan dengan pemanis alami tebu pilihan dan susu murni segar berstandar tinggi.",
-      price: { Regular: 22000, Large: 26000 },
-      badge: "AUTHENTIC",
-      notes: { sweetness: 3, intensity: 1, acidity: 0, caffeine: "Low" },
-      color: "from-green-800 to-green-950",
+      name: "HAZELNUT LATTE",
+      japanese: "ヘーゼルナッツ",
+      category: "COFFEE",
+      desc: "Kombinasi espresso mantap dengan sirup hazelnut panggang aromatik dan susu segar.",
+      price: { Regular: 28000, Large: 32000 },
+      badge: "POPULAR",
+      notes: { sweetness: 4, intensity: 3, acidity: 1, caffeine: "Medium" },
+      image: "https://i.postimg.cc/c4J6QCvx/image.png",
     },
     {
       id: 6,
-      name: "MILO DINOSAURUS",
-      japanese: "ミロダイナソー",
-      category: "NON-COFFEE",
-      desc: "Minuman cokelat Milo favorit sepanjang masa disajikan dingin dengan taburan bubuk Milo melimpah di atasnya.",
+      name: "BUTTERSCOTCH SEA SALT LATTE",
+      japanese: "シーsoltアレン",
+      category: "COFFEE",
+      desc: "Kopi susu dengan saus mentega butterscotch dan sentuhan garam laut gurih.",
+      price: { Regular: 27000, Large: 31000 },
+      badge: "SIGNATURE",
+      notes: { sweetness: 4, intensity: 3, acidity: 1, caffeine: "Medium" },
+      image: "https://i.postimg.cc/28vvq3M1/image.png",
+    },
+    {
+      id: 7,
+      name: "AMERICANO",
+      japanese: "アメリカーノ",
+      category: "COFFEE",
+      desc: "Espresso ganda klasik dengan air murni, menghasilkan rasa kopi murni yang pekat dan bersih.",
       price: { Regular: 20000, Large: 24000 },
-      badge: "FAVORITE",
-      notes: { sweetness: 5, intensity: 1, acidity: 0, caffeine: "None" },
-      color: "from-amber-900 to-stone-900",
+      badge: "CLASSIC BLACK",
+      notes: { sweetness: 1, intensity: 4, acidity: 3, caffeine: "High" },
+      image: "https://i.postimg.cc/Pqqk7vkJ/image.png",
+    },
+    {
+      id: 8,
+      name: "CAPPUCCINO",
+      japanese: "カプチーノ",
+      category: "COFFEE",
+      desc: "Espresso berpadu dengan susu steamed lembut menghasilkan froth tebal khas kopi Italia.",
+      price: { Regular: 24000, Large: 28000 },
+      badge: "TRADITIONAL",
+      notes: { sweetness: 2, intensity: 4, acidity: 2, caffeine: "Medium" },
+      image: "https://i.postimg.cc/hvkwPhwL/image.png",
+    },
+    {
+      id: 9,
+      name: "DUTCH CHOCOLATE",
+      japanese: "ダッチチョコ",
+      category: "NON-COFFEE",
+      desc: "Minuman cokelat premium khas Belanda yang pekat, manis gurih, dan penuh kehangatan.",
+      price: { Regular: 26000, Large: 30000 },
+      badge: "RICH & CREAMY",
+      notes: { sweetness: 4, intensity: 1, acidity: 0, caffeine: "None" },
+      image: "https://i.postimg.cc/FRvYMxDm/image.png",
+    },
+    {
+      id: 10,
+      name: "AVOCADO MILK",
+      japanese: "アボカドミルク",
+      category: "NON-COFFEE",
+      desc: "Minuman alpukat segar yang creamy berpadu dengan susu pilihan kualitas tinggi.",
+      price: { Regular: 26000, Large: 30000 },
+      badge: "FRUITY CHILL",
+      notes: { sweetness: 4, intensity: 0, acidity: 0, caffeine: "None" },
+      image: "https://i.postimg.cc/ZRJq7555/image.png",
+    },
+    {
+      id: 11,
+      name: "MATCHA KELAPA",
+      japanese: "抹茶ココナッツ",
+      category: "NON-COFFEE",
+      desc: "Cita rasa matcha khas Jepang dipadukan dengan air kelapa segar yang menyegarkan dahaga.",
+      price: { Regular: 24000, Large: 28000 },
+      badge: "REFRESHING",
+      notes: { sweetness: 3, intensity: 1, acidity: 1, caffeine: "Low" },
+      image: "https://i.postimg.cc/HLzmL4TT/image.png",
+    },
+    {
+      id: 12,
+      name: "KENANGAN MILK TEA",
+      japanese: "ミルクティー",
+      category: "NON-COFFEE",
+      desc: "Teh susu khas Kenangan dengan racikan daun teh premium berkualitas tinggi.",
+      price: { Regular: 21000, Large: 25000 },
+      badge: "DAILY MILKTEA",
+      notes: { sweetness: 4, intensity: 1, acidity: 0, caffeine: "Low" },
+      image: "https://i.postimg.cc/QCHhw9Gh/image.png",
+    },
+    {
+      id: 13,
+      name: "OREO SHAKE",
+      japanese: "オレオシェイク",
+      category: "NON-COFFEE",
+      desc: "Blended shake vanilla premium bertabur remah biskuit Oreo renyah melimpah.",
+      price: { Regular: 26000, Large: 30000 },
+      badge: "KIDS FAVORITE",
+      notes: { sweetness: 5, intensity: 0, acidity: 0, caffeine: "None" },
+      image: "https://i.postimg.cc/tJxC7ZrD/image.png",
+    },
+    {
+      id: 14,
+      name: "BUTTER CROISSANT",
+      japanese: "クロワッサン",
+      category: "BAKERY",
+      desc: "Danish pastry mentega berlapis renyah di luar, bertekstur lembut di dalam.",
+      price: { Regular: 17000, Large: 17000 },
+      badge: "BAKERY FRESH",
+      notes: { sweetness: 2, intensity: 0, acidity: 0, caffeine: "None" },
+      image: "https://i.postimg.cc/Hs16SJGg/image.png",
+    },
+    {
+      id: 15,
+      name: "ROTI SRIKAYA",
+      japanese: "ココナッツジャムパン",
+      category: "BAKERY",
+      desc: "Roti lembut khas Kenangan dengan isian selai srikaya kelapa manis harum tradisional.",
+      price: { Regular: 17000, Large: 17000 },
+      badge: "HERITAGE BREAD",
+      notes: { sweetness: 4, intensity: 0, acidity: 0, caffeine: "None" },
+      image: "https://i.postimg.cc/bYt6HxBg/image.png",
+    },
+    {
+      id: 16,
+      name: "ROTI KEJU MANIS",
+      japanese: "チーズパン",
+      category: "BAKERY",
+      desc: "Roti panggang bertekstur empuk diisi dengan keju cheddar manis gurih berlimpah.",
+      price: { Regular: 15000, Large: 15000 },
+      badge: "CHEESY BREAD",
+      notes: { sweetness: 3, intensity: 0, acidity: 0, caffeine: "None" },
+      image: "https://i.postimg.cc/zG0pX0yz/image.png",
+    },
+    {
+      id: 17,
+      name: "CHOCOLATE MILK BUN",
+      japanese: "ミルクチョコレート",
+      category: "BAKERY",
+      desc: "Roti susu khas Jepang bertabur bubuk cokelat pekat dan krim cokelat lumer.",
+      price: { Regular: 27000, Large: 27000 },
+      badge: "VIRAL BREAD",
+      notes: { sweetness: 5, intensity: 0, acidity: 0, caffeine: "None" },
+      image: "https://i.postimg.cc/v8fz6Q4S/image.png",
     },
   ];
 
@@ -86,7 +207,7 @@ export default function Catalog() {
       : products.filter((p) => p.category === filter);
 
   return (
-    <section id="catalog" className="py-24 border-b border-[#c8c0b5] relative">
+    <section id="catalog" className="py-24 border-b border-[#c8c0b5] relative bg-[#fcfbfa]">
       <div className="max-w-7xl mx-auto px-4 sm:px-8">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-6 border-b border-[#c8c0b5]">
@@ -106,7 +227,7 @@ export default function Catalog() {
                 className={`px-4 py-2 text-[10px] font-mono rounded transition-all uppercase tracking-wider ${
                   filter === cat
                     ? "bg-[#c82a2b] text-white font-bold"
-                    : "bg-[#eae5de] text-[#4a453f] border border-[#c8c0b5] hover:border-neutral-500"
+                    : "bg-[#eae5de] text-[#4a453f] border border-[#c8c0b5] hover:border-neutral-500 cursor-pointer"
                 }`}
               >
                 {cat}
@@ -116,83 +237,95 @@ export default function Catalog() {
         </div>
 
         {/* Product Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProducts.map((p) => {
             const size = sizeMap[p.id] || "Regular";
             const price = p.price[size];
 
             return (
-              <motion.div
+              <motion.article
                 key={p.id}
                 layout
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                className="bg-[#eae5de]/60 border border-[#c8c0b5] hover:border-[#c82a2b]/70 hover:shadow-md transition-all duration-300 rounded-2xl p-6 flex flex-col justify-between group relative overflow-hidden"
+                className="group flex flex-col justify-between"
               >
                 <div>
-                  {/* Badge & Jp Title */}
-                  <div className="flex justify-between items-center mb-4">
-                    <span className="text-[10px] font-mono font-bold bg-[#fcfbfa] border border-[#c8c0b5] text-[#c82a2b] px-2 py-0.5 rounded">
-                      {p.badge}
+                  {/* Image Card Frame */}
+                  <div className="overflow-hidden rounded-lg border border-[#c8c0b5] bg-[#eae5de] mb-4 aspect-square relative group-hover:border-[#c82a2b] transition-colors">
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 filter saturate-[0.98] contrast-[1.03]"
+                      loading="lazy"
+                    />
+                    {p.badge && (
+                      <span className="absolute top-3 left-3 bg-[#c82a2b] text-white text-[9px] font-mono font-bold px-2 py-0.5 tracking-wider uppercase">
+                        {p.badge}
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Meta Row */}
+                  <div className="flex justify-between items-center mb-1">
+                    <span className="text-[10px] font-mono text-[#c82a2b] tracking-wider uppercase font-bold">
+                      {p.category}
                     </span>
                     <span className="text-[10px] font-mono text-[#80766b]">{p.japanese}</span>
                   </div>
 
-                  {/* Name */}
-                  <h3 className="text-base font-bold text-[#1f1d1a] font-sans tracking-wide mb-2 group-hover:text-[#c82a2b] transition-colors">
+                  {/* Title */}
+                  <h3 className="text-base font-bold font-sans text-[#1f1d1a] group-hover:text-[#c82a2b] transition-colors leading-snug">
                     {p.name}
                   </h3>
 
                   {/* Description */}
-                  <p className="text-xs text-[#4a453f] font-sans leading-relaxed mb-6 line-clamp-3">
+                  <p className="text-xs text-[#80766b] font-serif leading-relaxed mt-2 mb-4 line-clamp-2">
                     {p.desc}
                   </p>
                 </div>
 
-                <div>
-                  {/* Size Switcher */}
-                  <div className="flex items-center justify-between mb-4 bg-[#eae5de] p-1.5 rounded-lg border border-[#c8c0b5]/50">
-                    <span className="text-[10px] font-mono text-[#80766b] pl-2">UKURAN</span>
-                    <div className="flex gap-1">
-                      {(["Regular", "Large"] as const).map((sz) => (
-                        <button
-                          key={sz}
-                          onClick={() => setSizeMap((prev) => ({ ...prev, [p.id]: sz }))}
-                          className={`text-[9px] font-mono py-1 px-3.5 rounded transition-all uppercase ${
-                            size === sz
-                              ? "bg-[#c82a2b] text-white font-bold"
-                              : "text-[#4a453f] hover:text-[#1f1d1a]"
-                          }`}
-                        >
-                          {sz}
-                        </button>
-                      ))}
-                    </div>
+                {/* Bottom Row Actions */}
+                <div className="pt-3 border-t border-[#c8c0b5]/50 flex items-center justify-between">
+                  <div>
+                    <span className="text-[9px] font-mono text-[#80766b] block">IDR / PRICE</span>
+                    <span className="text-base font-mono font-bold text-[#1f1d1a]">
+                      {price.toLocaleString("id-ID")}
+                    </span>
                   </div>
 
-                  {/* Pricing and Action */}
-                  <div className="flex items-center justify-between pt-4 border-t border-[#c8c0b5]/60">
-                    <div>
-                      <span className="text-[9px] font-mono text-[#80766b] block">RP / NETT</span>
-                      <span className="text-base font-mono font-bold text-[#1f1d1a]">
-                        {price.toLocaleString("id-ID")}
-                      </span>
-                    </div>
-
+                  <div className="flex items-center gap-2">
+                    {p.category !== "BAKERY" && (
+                      <div className="flex bg-[#eae5de] p-0.5 rounded border border-[#c8c0b5]">
+                        {(["Regular", "Large"] as const).map((sz) => (
+                          <button
+                            key={sz}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setSizeMap((prev) => ({ ...prev, [p.id]: sz }));
+                            }}
+                            className={`text-[9px] font-mono py-1 px-2 transition-all uppercase rounded-sm cursor-pointer ${
+                              size === sz
+                                ? "bg-[#c82a2b] text-white font-bold"
+                                : "text-[#4a453f] hover:text-[#1f1d1a]"
+                            }`}
+                          >
+                            {sz.charAt(0)}
+                          </button>
+                        ))}
+                      </div>
+                    )}
                     <button
                       onClick={() => setSelectedProduct(p.id)}
                       className="ticket-pill"
-                      style={{ minHeight: "36px", padding: "0.4rem 0.8rem" }}
+                      style={{ minHeight: "32px", padding: "0.25rem 0.6rem" }}
                     >
-                      <span>DETAILS</span>
-                      <svg className="w-4 h-4 p-0.5 border border-current rounded-full" viewBox="0 0 24 24">
-                        <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                      </svg>
+                      <span>INFO</span>
                     </button>
                   </div>
                 </div>
-              </motion.div>
+              </motion.article>
             );
           })}
         </div>
@@ -215,7 +348,7 @@ export default function Catalog() {
                     animate={{ scale: 1, opacity: 1 }}
                     exit={{ scale: 0.95, opacity: 0 }}
                     transition={{ type: "spring", duration: 0.5 }}
-                    className="bg-[#f4f0eb] border border-[#c8c0b5] rounded-2xl max-w-lg w-full p-6 sm:p-8 relative overflow-hidden font-mono text-[#1f1d1a]"
+                    className="bg-[#f4f0eb] border border-[#c8c0b5] rounded-lg max-w-lg w-full p-6 sm:p-8 relative overflow-hidden font-mono text-[#1f1d1a]"
                   >
                     {/* Decorative Header */}
                     <div className="flex justify-between items-center pb-4 mb-6 border-b border-[#c8c0b5]">
@@ -227,7 +360,7 @@ export default function Catalog() {
                       </div>
                       <button
                         onClick={() => setSelectedProduct(null)}
-                        className="text-[#4a453f] hover:text-[#1f1d1a] text-xs bg-[#eae5de] border border-[#c8c0b5] px-3 py-1 rounded"
+                        className="text-[#4a453f] hover:text-[#1f1d1a] text-xs bg-[#eae5de] border border-[#c8c0b5] px-3 py-1 rounded cursor-pointer"
                       >
                         [CLOSE]
                       </button>
@@ -270,7 +403,7 @@ export default function Catalog() {
                     </div>
 
                     {/* Extra Info Panel */}
-                    <div className="bg-[#eae5de] p-4 rounded-xl border border-[#c8c0b5] text-xs space-y-2 mb-6">
+                    <div className="bg-[#eae5de] p-4 rounded-lg border border-[#c8c0b5] text-xs space-y-2 mb-6">
                       <div className="flex justify-between">
                         <span className="text-[#4a453f]">Caffeine Profile:</span>
                         <span className="text-[#c82a2b] font-bold">{p.notes.caffeine}</span>
