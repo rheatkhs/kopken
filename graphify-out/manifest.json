@@ -1,0 +1,317 @@
+{
+  "eslint.config.mjs": {
+    "mtime": 1786417040.3053122,
+    "ast_hash": "dfa1f5f6a7037bf39dc510f30b180002",
+    "semantic_hash": "dfa1f5f6a7037bf39dc510f30b180002"
+  },
+  "next.config.ts": {
+    "mtime": 1786417040.4022105,
+    "ast_hash": "9b77af189a21a7a64e4bd7a426f64176",
+    "semantic_hash": "9b77af189a21a7a64e4bd7a426f64176"
+  },
+  "package.json": {
+    "mtime": 1786668602.3639913,
+    "ast_hash": "33d6713d0aa92381d8db1f1be5b04a93",
+    "semantic_hash": "33d6713d0aa92381d8db1f1be5b04a93"
+  },
+  "postcss.config.mjs": {
+    "mtime": 1786417040.3299246,
+    "ast_hash": "239f3ebf717465dc636818a1a619398d",
+    "semantic_hash": "239f3ebf717465dc636818a1a619398d"
+  },
+  "src/app/catalog/page.tsx": {
+    "mtime": 1786714060.1205773,
+    "ast_hash": "f03ac142b719f59d843d666f8d4afc5a",
+    "semantic_hash": "f03ac142b719f59d843d666f8d4afc5a"
+  },
+  "src/app/layout.tsx": {
+    "mtime": 1786712849.2916505,
+    "ast_hash": "a3c16e554925c9cda479f6c538aae266",
+    "semantic_hash": "a3c16e554925c9cda479f6c538aae266"
+  },
+  "src/app/page.tsx": {
+    "mtime": 1786714926.9301567,
+    "ast_hash": "ed3a804de2a16cfae02948bb16a80627",
+    "semantic_hash": "ed3a804de2a16cfae02948bb16a80627"
+  },
+  "src/components/AppShowcase.tsx": {
+    "mtime": 1786716533.3352642,
+    "ast_hash": "664a6f747360bb0005bf90ea930e2830",
+    "semantic_hash": "664a6f747360bb0005bf90ea930e2830"
+  },
+  "src/components/BrandStory.tsx": {
+    "mtime": 1786608897.7713442,
+    "ast_hash": "9bc3d1fc8d6f53b9f56067d5055ba8c9",
+    "semantic_hash": "9bc3d1fc8d6f53b9f56067d5055ba8c9"
+  },
+  "src/components/Catalog.tsx": {
+    "mtime": 1786715091.7682738,
+    "ast_hash": "27660a472f58db6f6dfef3a593f7a33e",
+    "semantic_hash": "27660a472f58db6f6dfef3a593f7a33e"
+  },
+  "src/components/Footer.tsx": {
+    "mtime": 1786716338.459413,
+    "ast_hash": "e3a18b2574b399fc8ae597e461857f46",
+    "semantic_hash": "e3a18b2574b399fc8ae597e461857f46"
+  },
+  "src/components/Header.tsx": {
+    "mtime": 1786716332.145174,
+    "ast_hash": "1f6f5a234ed0cd7a3bd4628db3a3f2ae",
+    "semantic_hash": "1f6f5a234ed0cd7a3bd4628db3a3f2ae"
+  },
+  "src/components/Hero.tsx": {
+    "mtime": 1786605046.2530074,
+    "ast_hash": "b601f7db197675157e811153a8d02d91",
+    "semantic_hash": "b601f7db197675157e811153a8d02d91"
+  },
+  "src/components/Installations.tsx": {
+    "mtime": 1786679005.6863275,
+    "ast_hash": "4fed1bd241724a4a09af38cf2ada6336",
+    "semantic_hash": "4fed1bd241724a4a09af38cf2ada6336"
+  },
+  "src/components/Manifesto.tsx": {
+    "mtime": 1786679449.370289,
+    "ast_hash": "03d1fdb1e89ce8b1ed805face27a2bef",
+    "semantic_hash": "03d1fdb1e89ce8b1ed805face27a2bef"
+  },
+  "src/components/SmoothScroll.tsx": {
+    "mtime": 1786668617.4848788,
+    "ast_hash": "60c5ab0dfac75d850db377058c3aa8ca",
+    "semantic_hash": "60c5ab0dfac75d850db377058c3aa8ca"
+  },
+  "src/components/Speakers.tsx": {
+    "mtime": 1786669255.8836956,
+    "ast_hash": "b93d3f325d8d58194642702a9b9335e7",
+    "semantic_hash": "b93d3f325d8d58194642702a9b9335e7"
+  },
+  "src/components/StoreLocator.tsx": {
+    "mtime": 1786597456.7592416,
+    "ast_hash": "6cbd8ab0c1c4f13b5aebc48abb6a329c",
+    "semantic_hash": "6cbd8ab0c1c4f13b5aebc48abb6a329c"
+  },
+  "src/components/Testimonials.tsx": {
+    "mtime": 1786587530.3948178,
+    "ast_hash": "6fa82e44e1a14172682b2c12eb6703a2",
+    "semantic_hash": "6fa82e44e1a14172682b2c12eb6703a2"
+  },
+  "src/components/Vouchers.tsx": {
+    "mtime": 1786587544.3614733,
+    "ast_hash": "091bf29ba19c56f45b5b81ef3a870fc9",
+    "semantic_hash": "091bf29ba19c56f45b5b81ef3a870fc9"
+  },
+  "tsconfig.json": {
+    "mtime": 1786585842.0800083,
+    "ast_hash": "ee17fd1c97c735e9f3564e3f5251f125",
+    "semantic_hash": "ee17fd1c97c735e9f3564e3f5251f125"
+  },
+  "AGENTS.md": {
+    "mtime": 1786585873.5201879,
+    "ast_hash": "01e8142356e15c3404e0d84c48187cd0",
+    "semantic_hash": "01e8142356e15c3404e0d84c48187cd0"
+  },
+  "CLAUDE.md": {
+    "mtime": 1786585873.520698,
+    "ast_hash": "5c27369b226fcf2be8a6cfe52224e767",
+    "semantic_hash": "5c27369b226fcf2be8a6cfe52224e767"
+  },
+  "README.md": {
+    "mtime": 1786417040.288318,
+    "ast_hash": "f15aaa42d5d299d091b1171097ea56ad",
+    "semantic_hash": "f15aaa42d5d299d091b1171097ea56ad"
+  },
+  "public/assets/agenda-architecture.webp": {
+    "mtime": 1786586564.311117,
+    "ast_hash": "a2ae191aefc8a7a2528b2557e5740c22",
+    "semantic_hash": "a2ae191aefc8a7a2528b2557e5740c22"
+  },
+  "public/assets/aroma.png": {
+    "mtime": 1786678884.8658834,
+    "ast_hash": "23c160aa05cdff0243ff8a09960da20c",
+    "semantic_hash": "23c160aa05cdff0243ff8a09960da20c"
+  },
+  "public/assets/coffee-journey-1.png": {
+    "mtime": 1786607872.7666075,
+    "ast_hash": "7d8440935446a4758fb7ab99478423cd",
+    "semantic_hash": "7d8440935446a4758fb7ab99478423cd"
+  },
+  "public/assets/coffee-journey-1.webp": {
+    "mtime": 1786607762.1560094,
+    "ast_hash": "036a425cf4b2a839029c3282a03bd61c",
+    "semantic_hash": "036a425cf4b2a839029c3282a03bd61c"
+  },
+  "public/assets/coffee-journey.png": {
+    "mtime": 1786606799.5161529,
+    "ast_hash": "8707789e7dd8ba55630a3303de814d68",
+    "semantic_hash": "8707789e7dd8ba55630a3303de814d68"
+  },
+  "public/assets/coffee-journey.webp": {
+    "mtime": 1786606447.896116,
+    "ast_hash": "44f83ea3b9b76f2f06fc61314a7c8da6",
+    "semantic_hash": "44f83ea3b9b76f2f06fc61314a7c8da6"
+  },
+  "public/assets/cynthia.png": {
+    "mtime": 1786669611.2149644,
+    "ast_hash": "d526206386a861ca38efb6161d496718",
+    "semantic_hash": "d526206386a861ca38efb6161d496718"
+  },
+  "public/assets/edward.png": {
+    "mtime": 1786669685.18128,
+    "ast_hash": "0c831badc2bce46df56d605e66c70e85",
+    "semantic_hash": "0c831badc2bce46df56d605e66c70e85"
+  },
+  "public/assets/edward.webp": {
+    "mtime": 1786608966.5892048,
+    "ast_hash": "fcf430fff873cd3cb82e8dc0b59ce23a",
+    "semantic_hash": "fcf430fff873cd3cb82e8dc0b59ce23a"
+  },
+  "public/assets/harmonic.png": {
+    "mtime": 1786678568.765937,
+    "ast_hash": "ac360d72aaeeab0f63b68b460467e2a0",
+    "semantic_hash": "ac360d72aaeeab0f63b68b460467e2a0"
+  },
+  "public/assets/hero-city.webp": {
+    "mtime": 1786586563.7866323,
+    "ast_hash": "5f453cda50cd1b9abac07dd35da6571b",
+    "semantic_hash": "5f453cda50cd1b9abac07dd35da6571b"
+  },
+  "public/assets/hero-kopi-kenangan.png": {
+    "mtime": 1786607267.4285362,
+    "ast_hash": "fc0f58bf40644d27e76c74722cccd546",
+    "semantic_hash": "fc0f58bf40644d27e76c74722cccd546"
+  },
+  "public/assets/hero-kopi-kenangan.webp": {
+    "mtime": 1786588223.873823,
+    "ast_hash": "1c814b006802fca447995aa672bc78d9",
+    "semantic_hash": "1c814b006802fca447995aa672bc78d9"
+  },
+  "public/assets/install-dream.webp": {
+    "mtime": 1786586581.0584772,
+    "ast_hash": "eb38834968b58a3bc64c2ea7b1249509",
+    "semantic_hash": "eb38834968b58a3bc64c2ea7b1249509"
+  },
+  "public/assets/install-echoes.webp": {
+    "mtime": 1786586581.4879525,
+    "ast_hash": "dd0d2871ea4019c001cbef69dc629159",
+    "semantic_hash": "dd0d2871ea4019c001cbef69dc629159"
+  },
+  "public/assets/install-flux.webp": {
+    "mtime": 1786586580.7397213,
+    "ast_hash": "e8c850d983aed88e1abcd5329c413a12",
+    "semantic_hash": "e8c850d983aed88e1abcd5329c413a12"
+  },
+  "public/assets/james.png": {
+    "mtime": 1786669796.0272422,
+    "ast_hash": "fed5792924788486f40590d1b0974a43",
+    "semantic_hash": "fed5792924788486f40590d1b0974a43"
+  },
+  "public/assets/manifesto-fuji-regenerated.webp": {
+    "mtime": 1786586571.8466065,
+    "ast_hash": "471b600aa532d317c1e61418cf9a91a8",
+    "semantic_hash": "471b600aa532d317c1e61418cf9a91a8"
+  },
+  "public/assets/mission.png": {
+    "mtime": 1786679406.7512245,
+    "ast_hash": "e505bb698be3f1009883624d4c9a48f2",
+    "semantic_hash": "e505bb698be3f1009883624d4c9a48f2"
+  },
+  "public/assets/pine-ticket.png": {
+    "mtime": 1786586571.3893883,
+    "ast_hash": "f719689351ef4c79f8a13cbc62df2938",
+    "semantic_hash": "f719689351ef4c79f8a13cbc62df2938"
+  },
+  "public/assets/roastery.png": {
+    "mtime": 1786678784.9386737,
+    "ast_hash": "80489f18fe91361ee7e079742eff7a44",
+    "semantic_hash": "80489f18fe91361ee7e079742eff7a44"
+  },
+  "public/assets/speaker-aiko-watanabe.webp": {
+    "mtime": 1786586577.7960653,
+    "ast_hash": "e34972f98ad4198e6c113e778bf0c0d9",
+    "semantic_hash": "e34972f98ad4198e6c113e778bf0c0d9"
+  },
+  "public/assets/speaker-daichi-ito.webp": {
+    "mtime": 1786586579.0050101,
+    "ast_hash": "807816d779050c13bafec395ac3b815e",
+    "semantic_hash": "807816d779050c13bafec395ac3b815e"
+  },
+  "public/assets/speaker-emi-kobayashi.webp": {
+    "mtime": 1786586579.254843,
+    "ast_hash": "6ba0866b2e9986332c471c974a455c41",
+    "semantic_hash": "6ba0866b2e9986332c471c974a455c41"
+  },
+  "public/assets/speaker-hana-mori.webp": {
+    "mtime": 1786586578.7477705,
+    "ast_hash": "ab9b9e46f59c4a28256ac4772353bd64",
+    "semantic_hash": "ab9b9e46f59c4a28256ac4772353bd64"
+  },
+  "public/assets/speaker-keisuke-tanaka.webp": {
+    "mtime": 1786586574.6757388,
+    "ast_hash": "0d852bcc575a742c4145fe7dc171920b",
+    "semantic_hash": "0d852bcc575a742c4145fe7dc171920b"
+  },
+  "public/assets/speaker-kenji-arata.webp": {
+    "mtime": 1786586579.9978902,
+    "ast_hash": "b608b2f4b11b01ba01d8a1e389927aaf",
+    "semantic_hash": "b608b2f4b11b01ba01d8a1e389927aaf"
+  },
+  "public/assets/speaker-mina-kuroda.webp": {
+    "mtime": 1786586578.5109737,
+    "ast_hash": "57bf5fb8b108fe5fe9375eecce6ab588",
+    "semantic_hash": "57bf5fb8b108fe5fe9375eecce6ab588"
+  },
+  "public/assets/speaker-naomi-koga.webp": {
+    "mtime": 1786586580.2275133,
+    "ast_hash": "c249b0c4fcb5f7d67cee5ccb25dd03f3",
+    "semantic_hash": "c249b0c4fcb5f7d67cee5ccb25dd03f3"
+  },
+  "public/assets/speaker-ren-sato.webp": {
+    "mtime": 1786586578.1996038,
+    "ast_hash": "66f0553183fa4dfe53a15b7c77a7b578",
+    "semantic_hash": "66f0553183fa4dfe53a15b7c77a7b578"
+  },
+  "public/assets/speaker-ryo-fujimoto.webp": {
+    "mtime": 1786586580.4685612,
+    "ast_hash": "38c245ee96b6a1f450cd24aaa15cbe52",
+    "semantic_hash": "38c245ee96b6a1f450cd24aaa15cbe52"
+  },
+  "public/assets/speaker-sophia-lee.webp": {
+    "mtime": 1786586576.7179456,
+    "ast_hash": "c798f88d6d449e9b88fc30da49df9eac",
+    "semantic_hash": "c798f88d6d449e9b88fc30da49df9eac"
+  },
+  "public/assets/speaker-yumi-nakamura.webp": {
+    "mtime": 1786586574.2633345,
+    "ast_hash": "8854d64957c22c43bc27b4c5bc73538e",
+    "semantic_hash": "8854d64957c22c43bc27b4c5bc73538e"
+  },
+  "public/assets/stamp-seal.svg": {
+    "mtime": 1786586563.4939897,
+    "ast_hash": "e831c4fe0bc96cc87a53de791971a1b2",
+    "semantic_hash": "e831c4fe0bc96cc87a53de791971a1b2"
+  },
+  "public/file.svg": {
+    "mtime": 1786417040.3390927,
+    "ast_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71",
+    "semantic_hash": "d09f95206c3fa0bb9bd9fefabfd0ea71"
+  },
+  "public/globe.svg": {
+    "mtime": 1786417040.3506272,
+    "ast_hash": "2aaafa6a49b6563925fe440891e32717",
+    "semantic_hash": "2aaafa6a49b6563925fe440891e32717"
+  },
+  "public/next.svg": {
+    "mtime": 1786417040.3581557,
+    "ast_hash": "8e061864f388b47f33a1c3780831193e",
+    "semantic_hash": "8e061864f388b47f33a1c3780831193e"
+  },
+  "public/vercel.svg": {
+    "mtime": 1786417040.3656676,
+    "ast_hash": "c0af2f507b369b085b35ef4bbe3bcf1e",
+    "semantic_hash": "c0af2f507b369b085b35ef4bbe3bcf1e"
+  },
+  "public/window.svg": {
+    "mtime": 1786417040.3732018,
+    "ast_hash": "a2760511c65806022ad20adf74370ff3",
+    "semantic_hash": "a2760511c65806022ad20adf74370ff3"
+  }
+}

@@ -47,7 +47,8 @@ export default function AppShowcase() {
               App
             </p>
             <h2 className="text-[10px] font-mono text-[#cfa869] font-bold tracking-widest uppercase leading-relaxed">
-              Find out how to get free vouchers, priority access and extra benefits.
+              Find out how to get free vouchers, priority access and extra
+              benefits.
             </h2>
           </div>
 
@@ -70,7 +71,7 @@ export default function AppShowcase() {
         </div>
 
         {/* Download Badges at bottom */}
-        <div className="relative z-10 pt-4 flex flex-wrap items-center gap-3">
+        <div className="relative z-10 pt-4 flex flex-wrap items-center gap-1">
           <a
             href="https://play.google.com/store/apps/details?gl=US&hl=en&id=com.kopikenangan"
             target="_blank"
@@ -80,7 +81,7 @@ export default function AppShowcase() {
             <img
               src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1611739412718-FB769K21E5S37C17MOMX/app-donlod-01.png"
               alt="Google Play Store"
-              className="h-[54px] object-contain"
+              className="h-[88px] object-contain"
             />
           </a>
           <a
@@ -92,7 +93,7 @@ export default function AppShowcase() {
             <img
               src="https://images.squarespace-cdn.com/content/v1/5fa1095912d2fc6dfc63ac9c/1611739426194-A3PTF4R4K1Z2PP0JYOQ6/app-donlod-02.png"
               alt="Apple App Store"
-              className="h-[54px] object-contain"
+              className="h-[88px] object-contain"
             />
           </a>
         </div>
