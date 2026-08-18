@@ -17,9 +17,11 @@ export default function Footer() {
       </a>
 
       {/* Slogan */}
-      <p className="font-serif text-[#80766b]">未来の珈琲、共に創る。</p>
-
-      {/* Footer Navigation */}
+      <div className="flex flex-col md:flex-row items-center gap-3 text-[#80766b]">
+        <p className="font-serif">未来の珈琲、共に創る。</p>
+        <span className="hidden md:inline text-[#c8c0b5]">•</span>
+        <p className="text-[10px]">© 2026 Kopi Kenangan</p>
+      </div>
       <nav className="flex flex-wrap justify-center gap-6 uppercase tracking-wider">
         <a href="#hero" className="hover:text-[#1f1d1a] transition-colors">Overview</a>
         <a href="#story" className="hover:text-[#1f1d1a] transition-colors">Story</a>

@@ -82,7 +82,7 @@ export default function Testimonials() {
 
                 {/* Quote Text */}
                 <p className="text-xs text-[#4a453f] font-serif leading-relaxed italic relative">
-                  "{t.comment}"
+                  &ldquo;{t.comment}&rdquo;
                 </p>
               </div>
 

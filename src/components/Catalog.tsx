@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -399,16 +400,16 @@ export default function Catalog({ limit }: { limit?: number }) {
 
         {/* View All Button for Homepage / Limit Mode */}
         {limit ? (
-          <a href="/catalog" className="ticket-pill mt-8">
+          <Link href="/catalog" className="ticket-pill mt-8">
             <span>VIEW ALL</span>
             <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
               <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-          </a>
+          </Link>
         ) : (
-          <a href="/" className="text-[10px] font-mono text-[#80766b] hover:text-[#c82a2b] transition-colors mt-8 block">
+          <Link href="/" className="text-[10px] font-mono text-[#80766b] hover:text-[#c82a2b] transition-colors mt-8 block">
             &lt; KEMBALI KE BERANDA
-          </a>
+          </Link>
         )}
       </div>
 
@@ -562,7 +563,7 @@ export default function Catalog({ limit }: { limit?: number }) {
                           {p.name}
                         </h3>
                         <p className="text-xs text-[#c82a2b] font-semibold mb-4">
-                          {p.japanese} // {p.category}
+                          {`${p.japanese} // ${p.category}`}
                         </p>
 
                         <p className="text-xs text-[#80766b] font-serif leading-relaxed mb-6">

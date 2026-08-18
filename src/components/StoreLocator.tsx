@@ -1,8 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { MapPin, Search, Clock, Navigation, Zap, Car } from "lucide-react";
-
+import { MapPin, Search, Clock, Zap, Car } from "lucide-react";
 export default function StoreLocator() {
   const [selectedCity, setSelectedCity] = useState("ALL");
   const [searchQuery, setSearchQuery] = useState("");
@@ -191,15 +190,19 @@ export default function StoreLocator() {
                   </span>
                 </div>
 
-                <button
-                  onClick={() => alert(`Membuka rute GPS ke: ${store.name}`)}
-                  className="ticket-pill w-full justify-center"
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
+                    `${store.name} ${store.address}`
+                  )}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="ticket-pill w-full justify-center cursor-pointer"
                 >
                   <span>OPEN IN MAPS</span>
-                  <svg className="w-5 h-5 p-1 border border-current rounded-full" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 p-1 border border-current rounded-full shrink-0" viewBox="0 0 24 24">
                     <path d="M5 12h12m-5-5 5 5-5 5" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
-                </button>
+                </a>
               </div>
             </div>
           ))}

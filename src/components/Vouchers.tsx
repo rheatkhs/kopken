@@ -54,16 +54,16 @@ export default function Vouchers() {
             <h3 className="text-xs font-bold font-mono text-[#1f1d1a] uppercase">{pass.title}</h3>
             <p className="text-[10px] text-[#4a453f] font-serif leading-tight">{pass.desc}</p>
             <strong className="text-xs font-serif font-bold text-[#c82a2b]">{pass.price}</strong>
-            <button
-              onClick={() => alert(`Memilih paket: ${pass.title}`)}
+            <a
+              href="#app"
+              title={`Pilih ${pass.title}`}
               className="w-7 h-7 rounded-full bg-[#1f1d1a] hover:bg-[#c82a2b] text-white flex items-center justify-center font-mono text-xs transition-colors"
             >
               →
-            </button>
+            </a>
           </article>
         ))}
       </div>
-
       {/* Circular Ticket Seal Badge (3 columns) */}
       <div className="md:col-span-3 relative z-10 flex justify-center">
         <div className="w-36 h-36 rounded-full bg-gradient-to-br from-[#c82a2b] to-[#a51d1e] text-white flex flex-col items-center justify-center p-4 text-center font-mono text-[11px] uppercase font-bold tracking-widest border-2 border-[#cfa869] shadow-lg">

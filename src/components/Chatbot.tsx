@@ -8,9 +8,7 @@ import {
   Coffee,
   Minimize2,
   Maximize2,
-  Sparkles,
 } from "lucide-react";
-
 interface Message {
   id: string;
   role: "user" | "assistant";
@@ -26,11 +24,18 @@ const INITIAL_SUGGESTIONS = [
   "🎁 Promo & Diskon Member",
 ];
 
-function formatTime(date: Date) {
-  return date.toLocaleTimeString("id-ID", {
+function getTimestamp() {
+  if (typeof window === "undefined") return "08:00";
+  return new Date().toLocaleTimeString("id-ID", {
     hour: "2-digit",
     minute: "2-digit",
   });
+}
+
+let msgIdCounter = 0;
+function createMessageId() {
+  msgIdCounter += 1;
+  return `msg-${Date.now()}-${msgIdCounter}`;
 }
 
 // Helper to format bold, italic, price tags, and code tags
@@ -134,7 +139,7 @@ export default function Chatbot() {
       role: "assistant",
       content:
         "Halo Kak! Selamat datang di **Kopi Kenangan** ☕✨\n\nAku **Barista Kenangan**, pemandu rasa resmi yang siap bantu pilih menu kopi favorit, varian susu oat, info promo voucher, hingga cara pesan di aplikasi.\n\nMau cari rekomendasi rasa apa hari ini?",
-      timestamp: formatTime(new Date()),
+      timestamp: "08:00",
     },
   ]);
   const [input, setInput] = useState("");
@@ -159,10 +164,10 @@ export default function Chatbot() {
     if (!messageContent || isLoading) return;
 
     const userMessage: Message = {
-      id: Date.now().toString(),
+      id: createMessageId(),
       role: "user",
       content: messageContent,
-      timestamp: formatTime(new Date()),
+      timestamp: getTimestamp(),
     };
 
     const newMessages = [...messages, userMessage];
@@ -193,21 +198,21 @@ export default function Chatbot() {
         data.reply || "Maaf Kak, terjadi kendala saat memproses jawaban.";
 
       const assistantMessage: Message = {
-        id: (Date.now() + 1).toString(),
+        id: createMessageId(),
         role: "assistant",
         content: replyContent,
-        timestamp: formatTime(new Date()),
+        timestamp: getTimestamp(),
       };
 
       setMessages((prev) => [...prev, assistantMessage]);
     } catch (err) {
       console.error("Chat error:", err);
       const errorMessage: Message = {
-        id: (Date.now() + 1).toString(),
+        id: createMessageId(),
         role: "assistant",
         content:
           "Maaf Kak, Barista Kenangan sedang mengalami kendala koneksi. Silakan coba kembali ya! 🙏",
-        timestamp: formatTime(new Date()),
+        timestamp: getTimestamp(),
       };
       setMessages((prev) => [...prev, errorMessage]);
     } finally {
@@ -218,11 +223,11 @@ export default function Chatbot() {
   const handleResetChat = () => {
     setMessages([
       {
-        id: Date.now().toString(),
+        id: createMessageId(),
         role: "assistant",
         content:
           "Halo kembali Kak! Obrolan sudah diperbarui ☕ Ada menu atau info Kopi Kenangan yang ingin kamu tanyakan?",
-        timestamp: formatTime(new Date()),
+        timestamp: getTimestamp(),
       },
     ]);
   };
